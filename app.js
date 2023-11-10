@@ -96,18 +96,44 @@ app.post("/registro", function (request, response) {
   let nombre = request.body.nombre;
   let apellidos = request.body.apellidos;
   let email = request.body.email;
-  //con estos datos hay que guardarlos en my sql
-  //Nombre y apellidos en empleados
-  //email en usuario
-  connection.query(
-    `update usuariosclientes set usuario id = (select usuarios where id=130) where id=5`,
-    function (error, result, fields) {
-        if(error){
-            response.status(400).send(`error ${error.message}`);
-            return;
-        }
-    response.send({message:"registro completado"})  ; 
-    });
+  let password = request.body.password;
+  let DNI = request.body.DNI;
+  let telefono = request.body.telefono;
+  let clientesid = request.body.clientesid;
+//insert into usuarios.
+let aux=0;
+//insert en usuarios el email y password;
+connection.query(
+  `insert into usuarios (email,password) values ("${email}","${password}")`,
+  function (error,result,fields) {
+    if (error) {
+      response.status(400).send(`error ${error.message}`);
+      return;
+      }
+
+  });
+//select para sacar el id del usuario nuevo
+connection.query(
+  `select id from usuarios where email="${email}"`,
+  function(error,result,fields) {
+    if (error) {
+      response.status(400).send(`error ${error.message}`);
+      return;
+      }
+      aux=result[0];
+      console.log(result);//me devuelve mas de un id porque al grabar y mandarlo de nuevo me duplica el usuario.
+  });
+connection.query(
+  `insert into empleadosclientes (nombre,apellidos,usuarioid,clientesid,DNI,telefono) values ("${nombre}","${apellidos}","${aux}","${clientesid}","${DNI}","${telefono}")`,
+  function(error,result,fields) {
+    if (error) {
+      response.status(400).send(`error ${error.message}`);
+      return;
+      }
+      console.log(result)
+  }
+)
+
 
 
 });
