@@ -213,14 +213,75 @@ const idcliente=request.params.idcliente;
 
 //-----------------------------------------------------------------------------Endpoints Mobiliario-------------
 
-app.get()
+//1º para traer todos los elementos de mobiliario para enseñarlo en nuestra pagina mobiliario
+app.get("/mobiliario", function (request,response)  {
+
+
+    connection.query(
+      `select * from mobiliario`,
+      function (error,result,fields) {
+        if (error)  {
+          response.status(400).send(`error ${error.message}`
+          )};
+      response.send(result);
+      });
+  
+});
+//2º Para insertar un nuevo elemento de mobiliario a traves de app.post
+app.post(`/mobiliario` , function (request,response)  {
+//estas variables se guardan y luego se utilizan para rellenar base de datos
+  const nombre =request.body.nombre;
+  const tipo =request.body.tipo;
+  const referencia =request.body.referencia;
+  const estado =request.body.estado;
+
+    connection.query(
+      `insert into mobiliario (nombre,tipo,referencia,estado) VALUES ("${nombre}","${tipo}","${referencia}","${estado}")`,
+      function (error,result,fields) {
+        if (error)  {
+          response.status(400).send(`error ${error.message}`
+          )};
+      response.send(result);
+      });
+});
+//3º Sirve para actualizar, es un post, 
+//pero se especifica el id con params entonces se ponen todos los campos pero se actualiza el que se precisa
+app.post (`/mobiliario/:idmobiliario`, function(request,response)  {
+
+  const idmobiliario=request.params.idmobiliario;
+  const nombre =request.body.nombre;
+  const tipo =request.body.tipo;
+  const referencia =request.body.referencia;
+  const estado =request.body.estado;
+
+  connection.query(
+    `update mobiliario set nombre="${nombre}", tipo="${tipo}", referencia= "${referencia}", estado="${estado}" where id ="${idmobiliario}"`,
+    function (error,result,fields) {
+      if (error)  {
+        response.status(400).send(`error ${error.message}`
+        )};
+    response.send(result);
+    });
+});
+//4º nos muestra en vez de todos, el elemento que pongamos por params.
+app.get("/mobiliario/:idmobiliario",   function (request,response) {
+
+  const idmobiliario=request.params.idmobiliario;
+
+  connection.query(
+    `select * from mobiliario where id = "${idmobiliario}"`,
+    function (error,result,fields) {
+      if (error)  {
+        response.status(400).send(`error ${error.message}`
+        )};
+    response.send(result);
+    });
+});
+
+//--TERMINA MOBILIARIO-----------------------------------------------------------------------------------------------
 
 
 
-//1º con app.get traemos todos los clientes con select*
-//2º creamos un cliente nuevo desde el thunder y lo guardamos
-//3º actualizamos cualquier dato en thunder y se actualiza en nuestra tabla,
-//la clave del update es  poner todos los valores como un insert y que se cambie solo el que se quiere actualizar.
 
 
 
@@ -229,8 +290,6 @@ app.get()
 
 
 
-
-//TERMINA CLIENTES
 app.listen(8000, function () {
   console.log("server up and running");
 });
