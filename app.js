@@ -172,7 +172,8 @@ app.post("/clientes", function(request,response) {
       response.send(result);
     });
 });
-app.post("/clientes/8", function(request,response) {
+app.post("/clientes/:idcliente", function(request,response) {
+  const idcliente = request.params.idcliente;
   const razonsocial= request.body.razon_social;
   const CIF= request.body.CIF;
   const sector= request.body.sector;
@@ -181,7 +182,7 @@ app.post("/clientes/8", function(request,response) {
   
   connection.query(
 
- `update clientes set razon_social="${razonsocial}",CIF="${CIF}",sector="${sector}",telefono="${telefono}",numero_empleados="${Nempleados}" where id =8`,
+ `update clientes set razon_social="${razonsocial}",CIF="${CIF}",sector="${sector}",telefono="${telefono}",numero_empleados="${Nempleados}" where id ="${idcliente}"`,
     function(error,result,fields) {
       if (error)  {
         response.status(400).send(`error ${error.message}`
@@ -191,10 +192,10 @@ app.post("/clientes/8", function(request,response) {
     });
   });
 
-app.get("/clientes/1", function(request,response) {
-
+app.get("/clientes/:idcliente", function(request,response) {
+const idcliente=request.params.idcliente;
   connection.query(
-    `select * from clientes where id=1`,
+    `select * from clientes where id="${idcliente}"`,
     function (error,result,fields) {
       if (error)  {
         response.status(400).send(`error ${error.message}`
@@ -202,7 +203,20 @@ app.get("/clientes/1", function(request,response) {
       response.send(result);
     });
 
-})
+});
+//1º con app.get traemos todos los clientes con select*
+//2º creamos un cliente nuevo desde el thunder y lo guardamos
+//3º actualizamos cualquier dato en thunder y se actualiza en nuestra tabla,
+//la clave del update es  poner todos los valores como un insert y que se cambie solo el que se quiere actualizar.
+//---TERMINA CLIENTES-------------------------------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------------Endpoints Mobiliario-------------
+
+app.get()
+
+
+
 //1º con app.get traemos todos los clientes con select*
 //2º creamos un cliente nuevo desde el thunder y lo guardamos
 //3º actualizamos cualquier dato en thunder y se actualiza en nuestra tabla,
