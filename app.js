@@ -42,20 +42,20 @@ app.get("/carrusel", function (request, response) {
   });
 });
 //app.get
-app.get(`/eventos/:ideventos`, function (request, response) {
-  ideventos = request.params.ideventos;
-  connection.query(
-    `select * from eventos where id = ${ideventos}`,
-    function (error, result, fields) {
-      if (error) {
-        return console.error(`error: ${error.message}`);
-      }
+//app.get(`/eventos/:ideventos`, function (request, response) {
+//  ideventos = request.params.ideventos;
+//  connection.query(
+//    `select * from eventos where id = ${ideventos}`,
+//    function (error, result, fields) {
+//      if (error) {
+//        return console.error(`error: ${error.message}`);
+//      }
       //la base de datos siempre te devuelve un array entoncecs queremos el elemento del array
       //como solo hay un elemento se pone el 0 que es la primera posicion.
-      response.send(result[0]);
-    }
-  );
-});
+//      response.send(result[0]);
+//    }
+//  );
+//});
 
 // TERMINA INDEX-------------------------------------------------------------------------------------------------------------------------------
 
@@ -85,9 +85,6 @@ app.post("/login", function (request, response) {
     }
   );
 });
-//con los datos
-//Hacer insert into clientes
-
 
 //query strings
 //params
@@ -130,10 +127,10 @@ connection.query(
       response.status(400).send(`error ${error.message}`);
       return;
       }
-      console.log(result)
-  });
+      console.log(result);
+    });
 
-});
+  });
 
 });
 
@@ -281,15 +278,145 @@ app.get("/mobiliario/:idmobiliario",   function (request,response) {
 //--TERMINA MOBILIARIO-----------------------------------------------------------------------------------------------
 
 
+//-------------------------------------------------------------------------------Endpoints Eventos------------
+
+//1ºMostrar todos los eventos
+app.get("/eventos",   function(request,response)    {
+
+  connection.query(
+    `select * from eventos`,
+    function (error,result,fields) {
+      if (error)  {
+        response.status(400).send(`error ${error.message}`
+        )};
+response.send(result);
+    });
+});
+//2º crear un nuevo evento,se utiliza post
+app.post("/eventos",    function(request,response)  {
+
+  const nombre =request.body.nombre;
+  const tipo =request.body.tipo;
+  const fechainicio =request.body.fecha_inicio;
+  const fechafin =request.body.fecha_fin;
+  const aforo =request.body.aforo;
+
+  connection.query(
+    `insert into eventos (nombre,tipo,fecha_inicio,fecha_fin,aforo) VALUES ("${nombre}","${tipo}","${fechainicio}","${fechafin}","${aforo}")`,
+    function (error,result,fields) {
+      if (error)  {
+        response.status(400).send(`error ${error.message}`
+        )};
+    response.send(result);
+    });
+});
+//3ºActualizar algun dato o todos de eventos, con post y un params para acceder directamente al evento deseado
+app.post("/eventos/:ideventos",    function(request,response)  {
+
+  const ideventos =request.params.ideventos;
+  const nombre =request.body.nombre;
+  const tipo =request.body.tipo;
+  const fechainicio =request.body.fecha_inicio;
+  const fechafin =request.body.fecha_fin;
+  const aforo =request.body.aforo;
+
+  connection.query(
+    `update eventos set nombre="${nombre}", tipo="${tipo}", fecha_inicio="${fechainicio}", fecha_fin="${fechafin}", aforo="${aforo}" where id ="${ideventos}"`,
+    function (error,result,fields) {
+      if (error)  {
+        response.status(400).send(`error ${error.message}`
+        )};
+    response.send(result);
+    });
+});
+//4º Seleccion de evento por params, para acceder a un evento especifico con GET.
+app.get("/eventos/:ideventos",    function(request,response)    {
+
+  const ideventos =request.params.ideventos;
+  
+  connection.query(
+    `select * from eventos where id="${ideventos}"`,
+    function(error,result,fields) {
+      if (error)  {
+        response.status(400).send(`error ${error.message}`
+        )}; 
+    response.send(result);
+    });
+});
+
+
+//------TERMINA EVENTOS--------------------------------------------------------------------------------------
 
 
 
 
+//------------------------------------------------------------------Endpoint para inventario-----------------
+//1º mostramos nuestro inventario
+app.get("/inventario",    function(request,response)  {
 
+  connection.query(
+    `select * from inventario`,
+    function (error,result,fields) {
+      if (error)  {
+        response.status(400).send(`error ${error.message}`
+        )};  
+    response.send(result);
+    });
+});
+//2º introducir nuevos elementos al inventario con post
+app.post("/inventario",      function(request,response)  {
 
+  const nombre =request.body.nombre;
+  const referencia =request.body.referencia;
+  const tipo =request.body.tipo;
+  const estado =request.body.estado;
+  const marca =request.body.marca;
 
+  connection.query(
+    `insert into inventario (nombre,referencia,tipo,estado,marca) values ("${nombre}","${referencia}","${tipo}","${estado}","${marca}")`,
+    function(error,result,fields) {
+      if (error)  {
+        response.status(400).send(`error ${error.message}`
+        )};
+    response.send(result);
+    });
+});
+//3º modificar alguno o todos los datos de un elemento con post y numero introducido por params
+app.post("/inventario/:idinventario",       function (request,response)  {
 
+  const idinventario =request.params.idinventario;
+  const nombre =request.body.nombre;
+  const referencia =request.body.referencia;
+  const tipo =request.body.tipo;
+  const estado =request.body.estado;
+  const marca =request.body.marca;
 
+  connection.query(
+    `update inventario set nombre="${nombre}", referencia="${referencia}", tipo="${tipo}", estado="${estado}", marca="${marca}" where id="${idinventario}"`,
+    function(error,result,fields) {
+      if (error)  {
+        response.status(400).send(`error ${error.message}`
+        )};
+    response.send(result);
+    });
+
+});
+//4ºseleccionar algun elemento con get y params
+app.get("/inventario/:idinventario",      function(request,response)    {
+
+  const idinventario =request.params.idinventario;
+
+  connection.query(
+    `select * from inventario where id="${idinventario}"`,
+    function(error,result,fields) {
+      if (error)  {
+        response.status(400).send(`error ${error.message}`
+        )};
+    response.send(result);
+    });
+});
+
+//--------------------------TERMINA INVENTARIO-------------------------------------------------------------------------
 app.listen(8000, function () {
   console.log("server up and running");
 });
