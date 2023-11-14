@@ -340,7 +340,7 @@ app.get("/eventos/:ideventos",    function(request,response)    {
       if (error)  {
         response.status(400).send(`error ${error.message}`
         )}; 
-    response.send(result);
+    response.send(result[0]);
     });
 });
 
