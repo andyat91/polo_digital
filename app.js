@@ -64,6 +64,7 @@ app.post("/login", function (request, response) {
   //Creamos una variable donde se va a hacer el request.query para poner menos cosas en el connection query
   const email = request.body.email;
   const password = request.body.password;
+  console.log(email,password);
   //consulta con usuarios
   //select * usuarios donde el email es igual al que ponemos en request y contraseña igual
   //connection.query tiene una funcion dentro, si error mostrar mensaje y si ok realizar consulta.
@@ -92,8 +93,8 @@ app.post("/login", function (request, response) {
 app.post("/registro", function (request, response) {
   let nombre = request.body.nombre;
   let apellidos = request.body.apellidos;
- // let email = request.body.email;
- // let password = request.body.password;
+  let email = request.body.email;
+  let password = request.body.password;
   let DNI = request.body.DNI;
   let telefono = request.body.telefono;
   let clientesid = request.body.clientesid;
@@ -118,8 +119,20 @@ connection.query(
       return;
       }
       aux=result[0].id;
-      console.log(result);//me devuelve mas de un id porque al grabar y mandarlo de nuevo me duplica el usuario.
- 
+      console.log(result);
+      //me devuelve mas de un id porque al grabar y mandarlo de nuevo me duplica el usuario.
+    });    
+connection.query(
+  `select id from clientes where razon_social="${clientesid}"`,
+  function (error,result,fields) {
+    if (error) {
+      response.status(400).send(`error ${error.message}`);
+      return;
+      }
+      console.log(result);
+  });
+
+
 connection.query(
   `insert into empleadosclientes (nombre,apellidos,usuarioid,clientesid,DNI,telefono) values ("${nombre}","${apellidos}","${aux}","${clientesid}","${DNI}","${telefono}")`,
   function(error,result,fields) {
@@ -127,12 +140,12 @@ connection.query(
       response.status(400).send(`error ${error.message}`);
       return;
       }
-      console.log(result);
+      response.send({ message: "Registrado" });
     });
-
-  });
-
+    
 });
+
+
 
 //connection.query va con parentesus hasta el final de la consulta.
 // TERMINA LOGIN Y REGISTRO----------------------------------------------------------------------------------
