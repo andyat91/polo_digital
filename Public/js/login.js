@@ -10,7 +10,7 @@ function login() {
     console.log(email,password);
 ;
 // Login
-fetch(`${host}/login`, {
+fetch(`${host}/login?total`, {
     method:"POST",
     headers: {
         "Content-Type":"application/json"

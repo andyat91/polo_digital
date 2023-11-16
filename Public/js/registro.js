@@ -31,10 +31,10 @@ fetch(`${host}/registro`,  {
     return response.json()
     
 }).then(function (json) {
-
+    alert("Registrado correctamente");
     console.log(json);
 }).catch(function (error) {
     return error;
-})
+});
 }
 }
