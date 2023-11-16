@@ -152,22 +152,27 @@ app.post("/registro", function (request, response) {
 //------------------------------------------------------------------------------------------EndPoints CLIENTES
 
 app.get("/clientes", function (request, response) {
-  connection.query(`select * FROM clientes`, function (error, result, fields) {
+  connection.query(
+    `select * FROM clientes`, function (error, result, fields) {
     if (error) {
       response.status(400).send(`error ${error.message}`);
     }
     response.send(result);
   });
+  connection.query(
+    `select id from clientes`
+  )
 });
 app.post("/clientes", function (request, response) {
+
   const razonsocial = request.body.razon_social;
   const CIF = request.body.CIF;
   const sector = request.body.sector;
   const telefono = request.body.telefono;
-  const Nempleados = request.body.numero_empleados;
+  const numeroempleados = request.body.numeroempleados;
 
   connection.query(
-    `insert into clientes (razon_social,CIF,sector,telefono,numero_empleados) values ("${razonsocial}","${CIF}","${sector}","${telefono}","${Nempleados}")`,
+    `insert into clientes (razon_social,CIF,sector,telefono,numero_empleados) values ("${razonsocial}","${CIF}","${sector}","${telefono}","${numeroempleados}")`,
     function (error, result, fields) {
       if (error) {
         response.status(400).send(`error ${error.message}`);
@@ -182,10 +187,10 @@ app.post("/clientes/:idcliente", function (request, response) {
   const CIF = request.body.CIF;
   const sector = request.body.sector;
   const telefono = request.body.telefono;
-  const Nempleados = request.body.numero_empleados;
+  const numeroempleados = request.body.numeroempleados;
 
   connection.query(
-    `update clientes set razon_social="${razonsocial}",CIF="${CIF}",sector="${sector}",telefono="${telefono}",numero_empleados="${Nempleados}" where id ="${idcliente}"`,
+    `update clientes set razon_social="${razonsocial}",CIF="${CIF}",sector="${sector}",telefono="${telefono}",numero_empleados="${numeroempleados}" where id ="${idcliente}"`,
     function (error, result, fields) {
       if (error) {
         response.status(400).send(`error ${error.message}`);
