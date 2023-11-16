@@ -1,5 +1,5 @@
 const host = "http://localhost:8000";
-window.addEventListener("load",clientes,registro);
+window.addEventListener("load",clientes);
 function clientes () {
 
 
