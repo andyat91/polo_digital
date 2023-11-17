@@ -1,11 +1,11 @@
 const host = "http://localhost:8000";
 window.addEventListener("load",clientes);
 
-
+//Mostrar clientes en HTML actualizando datos------------------------------------------------------------------------------
 function clientes () {
 
 
-fetch(`/clientes` 
+fetch(`${host}/clientes` 
 
 ).then( function(response) {
     return response.json()
@@ -31,7 +31,7 @@ fetch(`/clientes`
 
 }
 
-
+//Registrar cliente-------------------------------------------------------------------------------------------------------------
 function registrocliente () {
 
 const razon_social = document.getElementById("razon_social").value;
@@ -64,19 +64,28 @@ fetch(`${host}/clientes` , {
 
 }
 }
+//MOdificar algun dato de clientes--------------------------------------------------------------------------------------------
 function ModificarClientes(idclientes) {
+    
+    
+    
 
   fetch(`${host}/clientes/${idclientes}`, {
     method:"POST",
     headers: {
         "Content-Type":"application/json"
     },
+    body: JSON.stringify({razon_social: razon_social,CIF: CIF,sector: sector,telefono: telefono, numeroempleados: numeroempleados})
 }).then( function(response) {
     return response.json();
 
 }).then( function(json) {
     console.log(json);
 
+  
     
-})
+}).catch( function(error) {
+    console.log(error);
+});
+
 }

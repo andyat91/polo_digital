@@ -17,22 +17,26 @@
     <h5>Nuestro inventario</h5>
 </header>
 <main>
+  <div id="inventario">
     <ul>
         <li>ordenador_dell</li>
         <li>televisor_SONY</li>
         <li>altavoz_HUAWEI</li>
         <li>portatil_LENOVO</li>
     </ul>
-    
+  </div> 
     <h3>Introducir al inventario</h3>
 
     <form>
-        <input type="text" placeholder="Nombre"/>
-        <input type="number" placeholder="Referencia"/>
-        <input type="text" placeholder="tipo"/>
-        <label>Esta en buen estado?<input type="checkbox" placeholder="ok"/></label>
-        <input type="text" placeholder="Marca"/>
+        <input type="text" id="nombre" placeholder="Nombre"/>
+        <input type="number" id="referencia" placeholder="Referencia"/>
+        <input type="text" id="tipo" placeholder="tipo"/>
+        <input type="number" id="estado" placeholder="ESTADO? 1:OK 0:USADO">
+        <input type="text" id="marca" placeholder="Marca"/>
+        <input type="text" id="clienteid" placeholder="Empresa arrendataria"/>
     </form>
+    <button onclick="agregarInventario()" >Agregar Inventario</button>
+
 
     <h3>Modificar algun elemento del inventario</h3>
 
@@ -53,6 +57,7 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/inventario.js"></script>
   </footer>
     
 </body>
