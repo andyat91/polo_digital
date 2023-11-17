@@ -31,6 +31,7 @@
         <input type="text" id="tipo" placeholder="Tipo"/>
         <input type="number" id="referencia" placeholder="Referencia del producto"/>
         <input type="number" id="estado" placeholder="ESTADO? 1:OK 0:USADO">
+        <input type="number" id="salaid" placeholder="Ubicacion?"/>
     </form>
     <button onclick="agregarMobiliario()">Agregar</button>
    
@@ -38,10 +39,10 @@
 <h4>Modifica un elemento del mobiliario</h4>
 
     <form>
-        <input type="text" placeholder="Nombre del mobiliario"/>
-        <input type="text" placeholder="Tipo"/>
-        <input type="number" placeholder="Referencia del producto"/>
-        <label>Esta en buen estado?<input type="checkbox" placeholder="ok"/></label>
+        <input type="text" id="nombreModificar" placeholder="Nombre del mobiliario"/>
+        <input type="text" tipo="tipoModificar" placeholder="Tipo"/>
+        <input type="number" referencia="referenciaModificar" placeholder="Referencia del producto"/>
+        <input type="number" id="estadoModificar" placeholder="ESTADO? 1:OK 0:USADO">
     </form>
     
 </main>

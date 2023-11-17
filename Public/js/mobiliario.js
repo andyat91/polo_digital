@@ -1,6 +1,8 @@
 const host = "http://localhost:8000";
 window.addEventListener("load",mobiliario);
 
+
+//Mostrar mobiliario--------------------------------------------------------------------------------------------------------------------
 function mobiliario() {
 
     fetch(`${host}/mobiliario`
@@ -26,28 +28,29 @@ function mobiliario() {
     });
 
 }
+//Añadir nuevo mobiliario----------------------------------------------------------------------------------------------------------------
 function agregarMobiliario () {
 
     const nombre = document.getElementById("nombre").value;
     const tipo = document.getElementById("tipo").value;
     const referencia = document.getElementById("referencia").value;
     const estado = document.getElementById("estado").value;
+    const salaid = document.getElementById("salaid").value;
+
 
     fetch(`${host}/mobiliario`, {
         method:"POST",
         headers: {
         "Content-Type":"application/json"
     },
-    body: JSON.stringify({nombre:nombre , tipo:tipo , referencia:referencia , estado:estado})
+    body: JSON.stringify({nombre:nombre , tipo:tipo , referencia:referencia , estado:estado, salaid:salaid})
     
     }).then(function (response) {
         return response.json()
 
     }).then(function (json) {
         console.log(json)
-        if(json.referencia == referencia) {
-            referencia += 100;
-        }
+     
         alert("Mobiliario registrado")
 
     }).catch(function (error) {
@@ -56,6 +59,23 @@ function agregarMobiliario () {
 
 
 }
-function modificarMobiliario() {
+function modificarMobiliario(idmobiliario) {
+  
+    fetch(`${host}/mobiliario/${idmobiliario}` 
     
+    
+    ).then(function(response) {
+        return response.json()
+
+    }).then(function(json) {
+        console.log(json);
+
+        document.getElementById("nombreModificar").value = json[0].nombre;
+        document.getElementById("tipoModificar").value = json[0].tipo;
+        document.getElementById("referenciaModificar").value = json[0].referencia;
+        document.getElementById("estadoModificar").value = json[0].estado;
+
+    }).catch(function(error) {
+        console.log(error);
+    })
 }

@@ -159,9 +159,8 @@ app.get("/clientes", function (request, response) {
     }
     response.send(result);
   });
-  connection.query(
-    `select id from clientes`
-  )
+
+  
 });
 app.post("/clientes", function (request, response) {
 
@@ -240,16 +239,28 @@ app.post(`/mobiliario`, function (request, response) {
   const tipo = request.body.tipo;
   const referencia = request.body.referencia;
   const estado = request.body.estado;
+  const salaid = request.body.salaid;
+
 
   connection.query(
-    `insert into mobiliario (nombre,tipo,referencia,estado) VALUES ("${nombre}","${tipo}","${referencia}","${estado}")`,
+    `select id from salas where nombre="${salaid}"`,
+    function (error, result, fields) {
+      if (error) {
+        response.status(400).send(`error ${error.message}`);
+      }
+      response.send(result); 
+      let aux3 = result[0].id;
+    
+
+  connection.query(
+    `insert into mobiliario (nombre,tipo,referencia,estado) VALUES ("${nombre}","${tipo}","${referencia}","${estado}","${aux3}")`,
     function (error, result, fields) {
       if (error) {
         response.status(400).send(`error ${error.message}`);
       }
       response.send(result);
-    }
-  );
+    });
+  });
 });
 //3º Sirve para actualizar, es un post,
 //pero se especifica el id con params entonces se ponen todos los campos pero se actualiza el que se precisa
