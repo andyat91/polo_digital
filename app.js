@@ -120,8 +120,8 @@ app.post("/registro", function (request, response) {
       }
       aux = result[0].id;
       console.log(aux);
-    }
-  );
+    });
+
   connection.query(
     `select id from clientes where razon_social="${clientesid}"`,
     function (error, result, fields) {
@@ -253,7 +253,7 @@ app.post(`/mobiliario`, function (request, response) {
     
 
   connection.query(
-    `insert into mobiliario (nombre,tipo,referencia,estado) VALUES ("${nombre}","${tipo}","${referencia}","${estado}","${aux3}")`,
+    `insert into mobiliario (nombre,tipo,referencia,estado,salaid) VALUES ("${nombre}","${tipo}","${referencia}","${estado}","${aux3}")`,
     function (error, result, fields) {
       if (error) {
         response.status(400).send(`error ${error.message}`);
@@ -270,9 +270,11 @@ app.post(`/mobiliario/:idmobiliario`, function (request, response) {
   const tipo = request.body.tipo;
   const referencia = request.body.referencia;
   const estado = request.body.estado;
+  const salaid = request.body.salaid;
+
 
   connection.query(
-    `update mobiliario set nombre="${nombre}", tipo="${tipo}", referencia= "${referencia}", estado="${estado}" where id ="${idmobiliario}"`,
+    `update mobiliario set nombre="${nombre}", tipo="${tipo}", referencia= "${referencia}", estado="${estado}", salaid="${salaid}" where id ="${idmobiliario}"`,
     function (error, result, fields) {
       if (error) {
         response.status(400).send(`error ${error.message}`);
@@ -309,35 +311,63 @@ app.get("/eventos", function (request, response) {
     response.send(result);
   });
 });
+
 //2º crear un nuevo evento,se utiliza post
 app.post("/eventos", function (request, response) {
+
   const nombre = request.body.nombre;
   const tipo = request.body.tipo;
   const fechainicio = request.body.fecha_inicio;
   const fechafin = request.body.fecha_fin;
   const aforo = request.body.aforo;
+  const clientesid = request.body.clientesid;
+  const salaid = request.body.salaid;
+ // connection.query(
+ //   `select id from clientes where razon_social ="${clientesid}"`,
+ //   function (error,result, fields) {
+ //     if (error) {
+ //       response.status(400).send(`error ${error.message}`);
+ //     }
+ //   response.send(result);
+ //  aux=result[0].id;
+ // });
+ //   connection.query(
+ //     `select id from salas where nombre="${salaid}"`,
+ //     function (error, result, fields) {
+ //       if (error) {
+ //         response.status(400).send(`error ${error.message}`);
+ //       }
+ //     response.send(result);
+ //     let aux2 =result[0].id;
 
+//CONNECTION.QUERY ERROR: node:_http_outgoing:648
+   // throw new ERR_HTTP_HEADERS_SENT('set');
   connection.query(
-    `insert into eventos (nombre,tipo,fecha_inicio,fecha_fin,aforo) VALUES ("${nombre}","${tipo}","${fechainicio}","${fechafin}","${aforo}")`,
+    `insert into eventos (nombre,tipo,fecha_inicio,fecha_fin,aforo,clientesid,salaid) VALUES ("${nombre}","${tipo}","${fechainicio}","${fechafin}","${aforo}",${clientesid},${salaid})`,
     function (error, result, fields) {
       if (error) {
         response.status(400).send(`error ${error.message}`);
       }
       response.send(result);
-    }
-  );
-});
+    });
+  });
+ 
+  
+
 //3ºActualizar algun dato o todos de eventos, con post y un params para acceder directamente al evento deseado
 app.post("/eventos/:ideventos", function (request, response) {
+
   const ideventos = request.params.ideventos;
   const nombre = request.body.nombre;
   const tipo = request.body.tipo;
   const fechainicio = request.body.fecha_inicio;
   const fechafin = request.body.fecha_fin;
   const aforo = request.body.aforo;
+  const clientesid = request.body.clientesid;
+  const salaid = request.body.salaid;
 
   connection.query(
-    `update eventos set nombre="${nombre}", tipo="${tipo}", fecha_inicio="${fechainicio}", fecha_fin="${fechafin}", aforo="${aforo}" where id ="${ideventos}"`,
+    `update eventos set nombre="${nombre}", tipo="${tipo}", fecha_inicio="${fechainicio}", fecha_fin="${fechafin}", aforo="${aforo}", clientesid="${clientesid}", salaid="${salaid}" where id ="${ideventos}"`,
     function (error, result, fields) {
       if (error) {
         response.status(400).send(`error ${error.message}`);

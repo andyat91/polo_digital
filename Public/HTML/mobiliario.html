@@ -31,7 +31,8 @@
         <input type="text" id="tipo" placeholder="Tipo"/>
         <input type="number" id="referencia" placeholder="Referencia del producto"/>
         <input type="number" id="estado" placeholder="ESTADO? 1:OK 0:USADO">
-        <input type="number" id="salaid" placeholder="Ubicacion?"/>
+        <input type="text" id="salaid" placeholder="Ubicacion?"/>
+        
     </form>
     <button onclick="agregarMobiliario()">Agregar</button>
    
@@ -40,11 +41,13 @@
 
     <form>
         <input type="text" id="nombreModificar" placeholder="Nombre del mobiliario"/>
-        <input type="text" tipo="tipoModificar" placeholder="Tipo"/>
-        <input type="number" referencia="referenciaModificar" placeholder="Referencia del producto"/>
+        <input type="text" id="tipoModificar" placeholder="Tipo"/>
+        <input type="number" id="referenciaModificar" placeholder="Referencia del producto"/>
         <input type="number" id="estadoModificar" placeholder="ESTADO? 1:OK 0:USADO">
+        <input type="number" id="salaidModificar" placeholder="Ubicacion?"/>
+        <input type="number" class="visually-hidden" id="id" />
     </form>
-    
+    <button onclick="guardarMobiliario()">Guardar modificación</button>
 </main>
 <footer>
     <h3>Polo de contenidos digitales de Málaga</h3>

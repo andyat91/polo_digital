@@ -1,0 +1,122 @@
+const host = "http://localhost:8000";
+window.addEventListener("load",eventos,actualizarEvento);
+
+function eventos() {
+
+    fetch(`${host}/eventos`
+    
+    
+    ).then(function(response) {
+        return response.json()
+
+    }).then(function(json) {
+        console.log(json)
+
+        const containerEv = document.getElementById("eventos");
+        containerEv.innerHTML = `<ul>`;
+
+        for(i=0 ; i<json.length ; i++) {
+            containerEv.innerHTML += `<li><button onclick=modificarEventos(${json[i].id})  >Modificar</button>${json[i].nombre}</li>`
+        } 
+        containerEv.innerHTML +=`</ul>`;
+
+    }).catch(function(error) {
+        console.log(error)
+    })
+};
+
+function crearEventos() {
+
+    const nombre = document.getElementById("nombre").value;
+    const tipo = document.getElementById("tipo").value;
+//error fecha inicio y fechafin se guardan en mysql como undefinded.
+//he probado con los dos en date y los dos en texto y nada
+    const fechainicio = document.getElementById("fechainicio").value; 
+    const fechafin = document.getElementById("fechafin").value;
+    const aforo = document.getElementById("aforo").value;
+    const clientesid = document.getElementById("clientesid").value;
+    const salaid = document.getElementById("salaid").value;
+
+    fetch(`${host}/eventos`, {
+        method:"POST",
+        headers: {
+        "Content-Type":"application/json"
+    },
+    body: JSON.stringify({nombre:nombre , tipo:tipo , fecha_inicio:fechainicio , fecha_fin:fechafin , aforo:aforo , clientesid:clientesid , salaid:salaid})
+    
+    }).then(function(response) {
+        return response.json()
+
+    }).then(function(json) {
+        console.log(json)
+        
+
+        alert("Evento creado")
+    }).catch(function(error) {
+        console.log(error)
+
+    })
+};
+//Modificar eventos------------------------------------------------------------------------------------------------------------------------------------------------
+function modificarEventos(id) {
+
+    fetch(`${host}/eventos/${id}`
+    
+    ).then(function(response) {
+        response.json()
+
+
+    }).then(function(json) {
+        console.log(json);
+
+        document.getElementById("nombreModificar").value = json[0].nombre;
+        document.getElementById("tipoModificar").value = json[0].tipo;
+        document.getElementById("fechainicioModificar").value = json[0].fecha_inicio;
+        document.getElementById("fechafinModificar").value = json[0].fecha_fin;
+        document.getElementById("aforoModificar").value = json[0].aforo;
+        document.getElementById("clientesidModificar").value = json[0].clientesid;
+        document.getElementById("salaidModificar").value = json[0].salaid;
+        document.getElementById("id").value = json[0].id;
+
+    }).catch(function(error) {
+        console.log(error)
+    })
+
+};
+// DUDAS:
+//1º Fechas undefined.
+//2º añadir clienteid y salaid cuando ponen el nombre de una sala o cliente.
+//3º Cuando le doy a modificar evento me da undefinded too.
+
+
+function actualizarEvento() {
+
+    const nombre = document.getElementById("nombreModificar").value;
+    const tipo = document.getElementById("tipoModificar").value;
+    const fechainicio = document.getElementById("fechainicioModificar").value; 
+    const fechafin = document.getElementById("fechafinModificar").value;
+    const aforo = document.getElementById("aforoModificar").value;
+    const clientesid = document.getElementById("clientesidModificar").value;
+    const salaid = document.getElementById("salaidModificar").value;
+    const id = document.getElementById("id").value;
+
+
+    fetch(`${host}/eventos/${id}`, {
+        method:"POST",
+        headers: {
+        "Content-Type":"application/json"
+    },
+    body: JSON.stringify({nombre:nombre , tipo:tipo , fechainicio:fechainicio , fechafin:fechafin , aforo:aforo , clientesid:clientesid , salaid:salaid})
+
+
+    }).then(function(response) {
+        return response.json()
+
+    }).then(function(json) {
+        console.log(json)
+
+    
+    }).catch(function(error) {
+        console.log(error)
+    })
+};

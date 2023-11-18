@@ -17,34 +17,40 @@
      <h5>Nuestros eventos</h5>
 </header>
 <main>
+<div id="eventos">
     <ul>
         <li>Evento PolloWeen 31/10/23</li>
         <li>Navidad 21/12/23</li>
         <li>Hiring-day</li>
     </ul>
-
+</div>
 <h3>Crea un nuevo evento</h3>
 
     <form>
-        <input type="text" placeholder="Nombre"/>
-        <input type="text" placeholder="Tipo"/>
-        <input type="date" placeholder="Fecha de inicio"/>
-        <input type="date" placeholder="Fecha de fin"/>
-        <input type="number" placeholder="Aforo"/>
-        <button>Crear evento</button>
+        <input type="text" id="nombre" placeholder="Nombre"/>
+        <input type="text" id="tipo" placeholder="Tipo"/>
+        <input type="text" id="fechainicio" placeholder="Fecha de inicio"/>
+        <input type="text" id="fechafin" placeholder="Fecha de fin"/>
+        <input type="number" id="aforo" placeholder="Aforo"/>
+        <input type="text" id="clientesid" placeholder="Empresa"/>
+        <input type="text" id="salaid" placeholder="Sala?"/>
     </form>
+    <button onclick="crearEventos()">Crear evento</button>
+
 
 <h3>Modifica algun dato de tu evento</h3>
 
     <form>
-        <input type="text" placeholder="Nombre"/>
-        <input type="text" placeholder="Tipo"/>
-        <input type="date" placeholder="Fecha de inicio"/>
-        <input type="date" placeholder="Fecha de fin"/>
-        <input type="number" placeholder="Aforo"/>
-        <button>Modificar evento</button>
+        <input type="text" id="nombreModificar" placeholder="Nombre"/>
+        <input type="text" id="tipoModificar" placeholder="Tipo"/>
+        <input type="tect" id="fechainicioModificar" placeholder="Fecha de inicio"/>
+        <input type="text" id="fechafinModificar" placeholder="Fecha de fin"/>
+        <input type="number" if="aforoModificar" placeholder="Aforo"/>
+        <input type="text" id="clientesidModificar" placeholder="Empresa"/>
+        <input type="text" id="salaidModificar" placeholder="Sala?"/>
+        <input type="text" id="id" class="visually-hidden"/>
     </form>
-
+    <button onclick="actualizarEvento()">Modificar evento</button>
 </main>
 <footer>
     <h4>Polo de contenidos digitales de Málaga</h4>
@@ -54,6 +60,7 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/eventos.js"></script>
   </footer> 
 </body>
 </html>
