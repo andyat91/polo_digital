@@ -1,5 +1,5 @@
 const host = "http://localhost:8000";
-window.addEventListener("load",eventos,actualizarEvento);
+window.addEventListener("load",eventos,modificarEventos);
 
 function eventos() {
 
@@ -16,7 +16,7 @@ function eventos() {
         containerEv.innerHTML = `<ul>`;
 
         for(i=0 ; i<json.length ; i++) {
-            containerEv.innerHTML += `<li><button onclick=modificarEventos(${json[i].id})  >Modificar</button>${json[i].nombre}</li>`
+            containerEv.innerHTML += `<li><button onclick=modificarEventos(${json[i].id})>Modificar</button>${json[i].nombre}</li>`
         } 
         containerEv.innerHTML +=`</ul>`;
 
@@ -29,8 +29,6 @@ function crearEventos() {
 
     const nombre = document.getElementById("nombre").value;
     const tipo = document.getElementById("tipo").value;
-//error fecha inicio y fechafin se guardan en mysql como undefinded.
-//he probado con los dos en date y los dos en texto y nada
     const fechainicio = document.getElementById("fechainicio").value; 
     const fechafin = document.getElementById("fechafin").value;
     const aforo = document.getElementById("aforo").value;
@@ -58,12 +56,14 @@ function crearEventos() {
     })
 };
 //Modificar eventos------------------------------------------------------------------------------------------------------------------------------------------------
-function modificarEventos(id) {
+//tiene mismo url que 
+function modificarEventos(ideventos) {
 
-    fetch(`${host}/eventos/${id}`
+    fetch(`${host}/eventos/${ideventos}`
     
+
     ).then(function(response) {
-        response.json()
+        return response.json()
 
 
     }).then(function(json) {

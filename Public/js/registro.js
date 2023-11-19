@@ -26,15 +26,15 @@ fetch(`${host}/registro`,  {
     headers: {
         "Content-Type":"application/json"
     },
-    body: JSON.stringify({nombre: nombre,apellidos: apellidos, email: email, password: password,DNI: DNI,telefono: telefono, clientesid: clientesid})
+    body: JSON.stringify({nombre:nombre , apellidos:apellidos , email:email, password:password , DNI:DNI , telefono:telefono , clientesid:clientesid})
 }).then(function (response) {
     return response.json()
     
 }).then(function (json) {
-    alert("Registrado correctamente");
-    console.log(json);
+    alert("Registrado correctamente")
+    console.log(json)
 }).catch(function (error) {
     return error;
-});
+})
 }
 }

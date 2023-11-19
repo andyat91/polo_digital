@@ -41,12 +41,14 @@
     <h3>Modificar algun elemento del inventario</h3>
 
     <form>
-      <input type="text" placeholder="Nombre"/>
-      <input type="number" placeholder="Referencia"/>
-      <input type="text" placeholder="tipo"/>
-      <label>Esta en buen estado?<input type="checkbox" placeholder="ok"/></label>
-      <input type="text" placeholder="Marca"/>
-    </form>
+      <input type="text" id="nombreModificar" placeholder="Nombre"/>
+      <input type="number" id="referenciaModificar" placeholder="Referencia"/>
+      <input type="text" id="tipoModificar" placeholder="tipo"/>
+      <input type="number" id="estadoModificar" placeholder="ESTADO? 1:OK 0:USADO">
+      <input type="text" id="marcaModificar" placeholder="Marca"/>
+      <input type="text" id="clienteidModificar" placeholder="Empresa arrendataria"/>
+      <input type="number" id="id" class="visually-hidden"/>
+  </form>
     <button onclick="actualizarInventario()">Actualizar Inventario</button>
 
 </main>
