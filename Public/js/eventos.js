@@ -68,7 +68,7 @@ function modificarEventos(ideventos) {
 
     }).then(function(json) {
         console.log(json);
-
+// En este caso me devuelve un elemento y no un array entonces no hay que poner ([0])
         document.getElementById("nombreModificar").value = json[0].nombre;
         document.getElementById("tipoModificar").value = json[0].tipo;
         document.getElementById("fechainicioModificar").value = json[0].fecha_inicio;

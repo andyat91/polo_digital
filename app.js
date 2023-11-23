@@ -386,7 +386,7 @@ app.get("/eventos/:ideventos", function (request, response) {
       if (error) {
         response.status(400).send(`error ${error.message}`);
       }
-      response.send(result[0]);
+      response.send(result);
     }
   );
 });
