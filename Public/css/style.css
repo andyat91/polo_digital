@@ -39,24 +39,9 @@
         font-weight: 400;
         line-height: 1.3;
       }
-header h1 {
-    color: var(--especial);
-}
-body {
-    background-color: var(--opuesto);
-    color:var(--blanco);
-}
-header {
-   text-align: center;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-}
 
-header h1 {
-    color: var(--especial);
-    text-size-adjust: 42px;
-    padding: 16px;
-    border: 2px solid;
-    border-color: var(--terciario);
-}
+      .wrap {
+        max-width: 1200px;
+        padding: 0 16px;
+        margin: 0 auto;
+      }
