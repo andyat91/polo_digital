@@ -30,32 +30,18 @@ connection.connect((error) => {
 
 //------------------------------------------------------------------Endpoints para el Index---------------------------------------------------
 
-app.get("/carrusel", function (request, response) {
-  connection.query("select * from eventos", function (error, result, fields) {
-    let eventos = [];
-    for (let i = 0; i < 3; i++) {
-      eventos[i] = result[i];
-    }
-    // para filtrar en thunder por lo que quiero: http://localhost:8000/carrusel?total=3
-    let total = request.query.total;
-    response.send(eventos);
-  });
+app.get(`/carrusel`, function(request,response) {
+
+  connection.query(
+    `select * from eventos`,
+    function(error,result,fields) {
+      if (error) {
+        response.status(400).send(`error ${error.message}`);
+        return;
+      }
+    response.send(result);
+    });
 });
-//app.get
-//app.get(`/eventos/:ideventos`, function (request, response) {
-//  ideventos = request.params.ideventos;
-//  connection.query(
-//    `select * from eventos where id = ${ideventos}`,
-//    function (error, result, fields) {
-//      if (error) {
-//        return console.error(`error: ${error.message}`);
-//      }
-//la base de datos siempre te devuelve un array entoncecs queremos el elemento del array
-//como solo hay un elemento se pone el 0 que es la primera posicion.
-//      response.send(result[0]);
-//    }
-//  );
-//});
 
 // TERMINA INDEX-------------------------------------------------------------------------------------------------------------------------------
 

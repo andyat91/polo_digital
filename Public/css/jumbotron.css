@@ -1,0 +1,49 @@
+.itemcarrusel i {
+    color:white;
+}
+
+.itemcarrusel {
+    
+    height: 100%;
+    position: relative;
+    
+}
+
+.tarjetas {
+    width: 100%;
+    height: 100%;
+}
+.tarjetas h4 {
+    margin: 0;
+}
+
+.flechas{
+  
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+   
+}
+#contenedorcarrusel {
+   
+    height: 640px;
+    overflow: scroll;
+    padding: 0px;
+    margin: 0px;
+}
+#contenedorcarrusel img {
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.4);
+}
+#contenedorcarrusel::-webkit-scrollbar{
+    display: none;
+}
+main {
+    background-color: var(--terciario);
+}

@@ -5,6 +5,13 @@ body {
     background-color: var(--opuesto);
     color:var(--blanco);
 }
+
+main {
+    margin-top: 0px;
+}
+nav{
+    margin-bottom: 0px;
+}
 .header {
    text-align: center;
    display: flex;
@@ -28,6 +35,7 @@ header h3 {
     display: flex;
     justify-content: space-between;
     list-style-type: none;
+    
  }
 
 
@@ -43,5 +51,7 @@ nav ul li a:hover{
 nav{
     background-color: var(--terciario);
     padding-top: 16px;
+    padding-bottom: 8px;
    
 }
+

@@ -1,0 +1,33 @@
+footer {
+    background-color: var(--terciario);
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color:var(--opuesto)
+}
+
+footer div {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer h1 {
+    margin: 0px;
+    color:var(--especial);
+}
+
+footer ul {
+    display: flex;
+    list-style-type: none;
+    border-top: 2px solid;
+    border-color: var(--especial);
+}
+footer ul li {
+    padding-right: 16px;
+    padding-top: 16px;
+}
+
+footer ul li:hover {
+    color:var(--especial)
+}

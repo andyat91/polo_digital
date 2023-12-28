@@ -1,56 +1,35 @@
-const host = "http://localhost:8000";
 
-window.addEventListener("load", MostrarClick);
 
-function carruselClick(ideventos) {
+window.addEventListener("load", eventoscarrusel());
 
-  fetch(`${host}/eventos/${ideventos}`)
+function eventoscarrusel () {
 
-    .then(function (response) {
-      return response.json();
-    })
 
-    .then(function (json) {
+  fetch(`http://localhost:8000/carrusel`
+  
+  ).then(function(response) {
+    return response.json()
 
-      const containerUl = document.getElementById("carrusel");
 
-      const eventoHTML = `<h3>${json.nombre}</h3>
-        <p>${json.tipo}</p> 
-        <button onclick=MostrarClick()>VOLVER</button> `;
+  }).then(function(json) {
+    console.log(json)
 
-      containerUl.innerHTML = eventoHTML;
-      console.log(eventoHTML);
-    })
+    const containercarrusel = document.getElementById("contenedorcarrusel");
 
-    .catch(function (error) {
-      console.log(error);
-    });
-}
+    for(let i=0 ; i<json.length ; i++) {
+      containercarrusel.innerHTML += `<div class="itemcarrusel">
+                                          <div class="tarjetas"><img src="${json[i].images}"/>
+                                          </div>
+                                          <div class="flechas">
+                                              <h4>${json[i].nombre} </h4>
+                                              <h5>Fecha del evento : ${json[i].fecha_inicio} </h5>
+                                          </div>
+                                      </div>`
+    }
 
-//Poner un boton volver a lo que ha salido y que vuelva atras.
-//CALLBACK:primero me pinta el evento y luego la llamo de nuevo para que haga lo mismo en el boton volver.
-function MostrarClick() {
-  //En este caso el fetch me trae de mi endpoint 3 eventos.
-  fetch(`${host}/carrusel?total=3`)
-    .then(function (response) {
-      return response.json();
-    })
 
-    .then(function (json) {
-      //El json que devuelve trae un array donde aparecen 3 eventos
-      //Coge el container donde está el id carrusel y pon en su lugar un <ul>listado</ul>
-      const containerUl = document.getElementById("carrusel");
-      containerUl.innerHTML = "<ul>";
-      //Recorreme los tres eventos y ve metiendolo en una lista que vamos metiendo en nuestra variable containerUl
-      for (i = 0; i < json.length; i++) {
-        containerUl.innerHTML += `<li>${json[i].nombre} <img src="${json[i].images}"/>${json[i].fecha_inicio}${json[i].fecha_fin}
-                <button onclick="carruselClick(${json[i].id})">Saber más</button> </li>`;
-      }
-      //Ahora pon un boton con una funcion onclick que va seleccionando el numero de id en cada evento que lee el for
-      containerUl.innerHTML += `</ul>`;
-      containerUl.innerHTML = innerHTML;
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  }).catch(function(error) {
+    console.log(error);
+
+  })
 }
