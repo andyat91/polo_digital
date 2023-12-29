@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
- 
-    <title>Polo_Digital_LOGIN</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <title>Polo_Digital_LOGIN</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,30 +17,82 @@
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/header-nav.css" />
   <link rel="stylesheet" href="/css/jumbotron.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/login-registro.css" />
 </head>
+
 <body>
   <header>
     <div class="header">
 
       <h1>P o l o _ D i g i t a l</h1>
+      <h3>login</h3>
     </div>
   </header>
-<form>
-   <input type="email" id="email" placeholder="introduce tu email"/>
-   
-   <input type="password" id="password" placeholder="Introduce tu password"/>
-   
-</form>
-<button onclick="login()">Login</button>
-<footer>
-    <h3>Polo de contenidos digitales de Málaga</h3>
-    <a href="www.google.es">Acceso a Google</a>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-    <script src="/js/login.js"></script>
+  <nav>
+    <div class="wrap">
+      <ul class="navmenu">
+        <li><a href="html/login.html">Login</a></li>
+        <li><a href="html/registro.html">Registro</a></li>
+        <li><a href="html/clientes.html">Clientes</a></li>
+        <li><a href="html/mobiliario.html">Mobiliario</a></li>
+        <li><a href="html/inventario.html">inventario</a></li>
+        <li><a href="html/eventos.html">Eventos</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+<div class="loginregistro">
+    <div class="wrap">
+    <div class="caja">
+      <h4>Iniciar sesión</h4>
+      <form>
+        <input type="email" id="email" placeholder="introduce tu email" />
+        <input type="password" id="password" placeholder="Introduce tu password" />
+      </form>
+      <button onclick="login()">Login</button>
+    </div>
+  </div>
+</div>
+  </main>
+  <footer>
+    <div class="wrap">
+      <h1>P o l o _ D i g i t a l</h1>
+      <h3>Polo de contenidos digitales de Málaga</h3>
+      <ul>
+        <a>
+          <li><i class="bi bi-instagram"></i> Instagram</li>
+        </a>
+        <a>
+          <li><i class="bi bi-facebook"></i> Facebook</li>
+        </a>
+        <a>
+          <li><i class="bi bi-twitch"></i> Twitch</li>
+        </a>
+        <a>
+          <li><i class="bi bi-youtube"></i> Youtube</li>
+        </a>
+      </ul>
+
+      <div class="politicafooter">
+        <p>Newsletter Polo_Digital</p>
+        <form>
+          <input type="text" id="emailnews" placeholder="Introduce tu email" />
+        </form>
+        <button onclick="suscripcion()">Suscripción</button>
+
+        <input type="checkbox" id="checkbox" class="checkbox" /><label class="labelcheck" for="checkbox">Aceptar</label>
+        <a href="/html/politicadeprivacidad.html" class="enlacepolitica">política de privacidad</a>
+
+      </div>
+    </div>
+
   </footer>
+
+
+  <script src="/js/login.js"></script>
+  <script src="/js/index.js"></script>
+
 </body>
+
 </html>

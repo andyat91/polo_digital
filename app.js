@@ -43,6 +43,21 @@ app.get(`/carrusel`, function(request,response) {
     });
 });
 
+app.post(`/suscripcion`, function(request,response) {
+
+  const email = request.body.email;
+  
+  connection.query(
+    `insert into newsletter (email,suscrito) values ("${email}",1)`,
+    function(error,result,fields) {
+      if (error) {
+        response.status(400).send(`error ${error.message}`);
+        return;
+      }
+    response.send({message:"suscrito"});
+    });
+});
+
 // TERMINA INDEX-------------------------------------------------------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------Endpoints para login y registro;
@@ -463,6 +478,8 @@ app.get("/inventario/:idinventario", function (request, response) {
 });
 
 //--------------------------TERMINA INVENTARIO-------------------------------------------------------------------------
+
+
 app.listen(8000, function () {
   console.log("server up and running");
 });

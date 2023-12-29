@@ -22,6 +22,7 @@ footer ul {
     list-style-type: none;
     border-top: 2px solid;
     border-color: var(--especial);
+    cursor:pointer;
 }
 footer ul li {
     padding-right: 16px;
@@ -31,3 +32,69 @@ footer ul li {
 footer ul li:hover {
     color:var(--especial)
 }
+
+.politicafooter {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--opuesto);
+    align-items: center;
+    color: var(--terciario);
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.politicafooter input{
+    color:var(--opuesto);
+    background-color: var(--blanco);
+     padding:8px ;
+     border:none;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.politicafooter button{
+    color:var(--opuesto);
+    background-color: var(--blanco);
+    padding:8px ;
+    border:none;
+   
+}
+.politicafooter button:hover{
+    background-color: var(--especial);
+}
+
+footer .checkbox {
+    display: none;
+    
+}
+footer .labelcheck {
+    color:var(--opuesto);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px;
+  background-color: var(--blanco);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+footer .labelcheck:hover{
+    background-color: var(--especial);
+}
+.politicafooter p {
+    margin:0;
+}
+
+
+footer .checkbox:checked + .labelcheck {
+    background-color: var(--especial);
+    color:var(--opuesto);
+} 
+
+footer a {
+    text-decoration: none;
+    color:var(--terciario)
+}
+footer a:hover{
+    color: var(--especial);
+}
+

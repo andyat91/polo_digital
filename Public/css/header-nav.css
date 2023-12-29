@@ -19,6 +19,7 @@ nav{
    justify-content: center;
    border: 8px solid;
    border-color: var(--terciario);
+   padding: 40px;
 }
 
 header h1 {

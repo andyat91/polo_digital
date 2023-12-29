@@ -44,6 +44,6 @@
 #contenedorcarrusel::-webkit-scrollbar{
     display: none;
 }
-main {
+/* main {
     background-color: var(--terciario);
-}
+} */

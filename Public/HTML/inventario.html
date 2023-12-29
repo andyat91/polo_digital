@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/header-nav.css" />
   <link rel="stylesheet" href="/css/jumbotron.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
 </head>
 <body>
   <header>
@@ -21,7 +22,19 @@
      
       <h1>P o l o _ D i g i t a l</h1>
     </div>
-  </header>
+</header>
+<nav>
+  <div class="wrap">
+    <ul class="navmenu">
+      <li><a href="html/login.html">Login</a></li>
+      <li><a href="html/registro.html">Registro</a></li>
+      <li><a href="html/clientes.html">Clientes</a></li>
+      <li><a href="html/mobiliario.html">Mobiliario</a></li>
+      <li><a href="html/inventario.html">inventario</a></li>
+      <li><a href="html/eventos.html">Eventos</a></li>
+    </ul>
+  </div>
+</nav>
 <main>
   <div id="inventario">
     <ul>
@@ -59,15 +72,42 @@
 
 </main>
 <footer>
+  <div class="wrap">
+    <h1>P o l o _ D i g i t a l</h1>
     <h3>Polo de contenidos digitales de Málaga</h3>
-    <a href="www.google.es">Acceso a Google</a>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
+    <ul>
+      <a>
+        <li><i class="bi bi-instagram"></i> Instagram</li>
+      </a>
+      <a>
+        <li><i class="bi bi-facebook"></i> Facebook</li>
+      </a>
+      <a>
+        <li><i class="bi bi-twitch"></i> Twitch</li>
+      </a>
+      <a>
+        <li><i class="bi bi-youtube"></i> Youtube</li>
+      </a>
+    </ul>
+
+    <div class="politicafooter">
+      <p>Newsletter Polo_Digital</p>
+      <form>
+        <input type="text" id="emailnews" placeholder="Introduce tu email" />
+      </form>
+      <button onclick="suscripcion()">Suscripción</button>
+
+      <input type="checkbox" id="checkbox" class="checkbox" /><label class="labelcheck" for="checkbox">Aceptar</label>
+      <a href="/html/politicadeprivacidad.html" class="enlacepolitica">política de privacidad</a>
+
+    </div>
+  </div>
+
+</footer>
+
     <script src="/js/inventario.js"></script>
-  </footer>
+    <script src="/js/index.js"></script>
+  
     
 </body>
 </html>

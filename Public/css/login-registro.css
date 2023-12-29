@@ -1,0 +1,26 @@
+.caja {
+    border:2px solid;
+    border-radius: 8px;
+    border-color: var(--especial);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 200px;
+    padding-top: 160px;
+    padding-bottom: 160px;
+    padding-right: 80px;
+    padding-left: 80px;
+    
+}
+
+.loginregistro {
+    
+    display: flex;
+    align-items: center;
+    background-image: url("/images/constelacion1.jpg");
+    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+    background-repeat: no-repeat; 
+    width: 100%;
+    height: 600px;
+}
+
