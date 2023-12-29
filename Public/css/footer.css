@@ -1,8 +1,14 @@
 footer {
-    background-color: var(--terciario);
+    border-top: 48px solid;
+    border-color: var(--opuesto);
+    /* background-image: url("/images/estrellas.jpg");
+    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+    /* background-repeat: no-repeat; 
+    width: 100%;
+    height: 400px; */ 
     padding-top: 40px;
     padding-bottom: 40px;
-    color:var(--opuesto)
+    color:var(--terciario);
 }
 
 footer div {
@@ -45,7 +51,7 @@ footer ul li:hover {
 
 .politicafooter input{
     color:var(--opuesto);
-    background-color: var(--blanco);
+    background-color: var(--terciario);
      padding:8px ;
      border:none;
     border-bottom-left-radius: 8px;
@@ -54,7 +60,7 @@ footer ul li:hover {
 
 .politicafooter button{
     color:var(--opuesto);
-    background-color: var(--blanco);
+    background-color: var(--terciario);
     padding:8px ;
     border:none;
    
@@ -73,7 +79,7 @@ footer .labelcheck {
   align-items: center;
   cursor: pointer;
   padding: 8px;
-  background-color: var(--blanco);
+  background-color: var(--terciario);
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
 }
