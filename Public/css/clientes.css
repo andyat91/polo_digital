@@ -38,3 +38,11 @@ h2{
 #clientes {
     margin-top: 48px;
 }
+#clientes .textobutton{
+    display: flex;
+    flex-direction: row;
+}
+#clientes button {
+
+    padding: 8px;
+}

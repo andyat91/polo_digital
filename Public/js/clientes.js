@@ -24,9 +24,13 @@ fetch(`${host}/clientes`
           <h3>${json[i].razon_social}</h3>
           <p>${json[i].descripcion} </p>
           </div>
+          <div class="textobutton">
           <div>
           <h5>sector: ${json[i].sector} </h5>
           <h5>TELEFONO: ${json[i].telefono} </h5>
+          </div>
+          <h5><a href="www.releevant.com"><i class="bi bi-globe2"></i>releevant.com</a></h5>
+          <button onclick="ModificarClientes(${json[i].id})">Editar</button>
           </div>
         </div>
        </div>`;
