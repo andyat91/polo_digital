@@ -13,12 +13,12 @@ function registro() {
     let clientesid = document.getElementById("clientesid").value;
 
     if(email!=repiteemail) {
-        alert("email mal puesto, repite email");
+        alert("email mal no coincide");
     
     } else if (password!=repitepassword) {
-        alert("password mal puesta");
+        alert("password no coincide");
     } else if (email!=repiteemail && password!=repitepassword) {
-        alert("email y password mal puestas")
+        alert("email y password no coinciden")
     } else {
 
 fetch(`${host}/registro`,  {

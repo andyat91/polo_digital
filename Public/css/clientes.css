@@ -1,0 +1,40 @@
+h2{
+    text-align: center;
+}
+.card {
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+    color:var(--terciario);
+    width:100%;
+    border:4px solid;
+    border-color: var(--especial);
+    border-radius: 16px;
+    background-size: cover;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+.card img {
+    width: 30%;
+   height: 260px;
+    background-size: cover; 
+    overflow: hidden;
+   
+}
+.card h3,h5 {
+    margin: 0px;
+}
+.card div{
+    padding: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.nombrepolo {
+
+    color:var(--especial);
+}
+#clientes {
+    margin-top: 48px;
+}

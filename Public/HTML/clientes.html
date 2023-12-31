@@ -15,12 +15,14 @@
   <link rel="stylesheet" href="/css/header-nav.css" />
   <link rel="stylesheet" href="/css/jumbotron.css" />
   <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/clientes.css" />
 </head>
 <body>
   <header>
     <div class="header">
 
       <h1>P o l o _ D i g i t a l</h1>
+      <h3>Habitantes</h3>
     </div>
   </header>
   <nav>
@@ -36,14 +38,19 @@
     </div>
   </nav>
   <main>
-<h2>Estos son todos nuestros clientes:</h2>
+    <div class="wrap">
+
+
 <div id="clientes">
-  <ul>
-    <li>Releevant</li>
-    <li>OWO Tech</li>
-    <li>Campero_games</li>
-    <li>Ciencia VR</li>
-  </ul>
+ <div class="card">
+  <img src="/images/jacinto.png"/>
+  <div>
+    <h3>Nombre</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nostrum adipisci ea, numquam a nisi minus distinctio quod expedita totam nam ab maxime </p>
+    <h5>sector</h5>
+    <h5>TELEFONO</h5>
+  </div>
+ </div>
 </div>
 <h3>Registrate como nueva empresa</h3>
 
@@ -67,6 +74,7 @@
   <input type="number" id="id" class="visually-hidden" placeholder="numero de empleados"/>
 </form>
 <button onclick="actualizarClientes()">Modificar datos</button>
+</div>
 </main>
 <footer>
   <div class="wrap">

@@ -109,8 +109,7 @@ app.post("/registro", function (request, response) {
         response.status(400).send(`error ${error.message}`);
         return;
       }
-    }
-  );
+    });
   //select para sacar el id del usuario nuevo
   connection.query(
     `select id from usuarios where email="${email}"`,

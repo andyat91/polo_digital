@@ -22,33 +22,50 @@
     <div class="header">
       
       <h1>P o l o _ D i g i t a l</h1>
+      <h3>registro</h3>
     </div>
   </header>
   <nav>
     <div class="wrap">
       <ul class="navmenu">
-        <li><a href="html/login.html">Login</a></li>
-        <li><a href="html/registro.html">Registro</a></li>
-        <li><a href="html/clientes.html">Clientes</a></li>
-        <li><a href="html/mobiliario.html">Mobiliario</a></li>
-        <li><a href="html/inventario.html">inventario</a></li>
-        <li><a href="html/eventos.html">Eventos</a></li>
+        <li><a href="/html/login.html">Login</a></li>
+        <li><a href="/html/registro.html">Registro</a></li>
+        <li><a href="/html/clientes.html">Clientes</a></li>
+        <li><a href="/html/mobiliario.html">Mobiliario</a></li>
+        <li><a href="/html/inventario.html">inventario</a></li>
+        <li><a href="/html/eventos.html">Eventos</a></li>
       </ul>
     </div>
   </nav>
 <main>
-    
+  <div class="wrap">
+  <div class="caja"> 
+    <div class="avatar">
+      <div class="cabeza"></div>
+    <div class="cuerpo"></div>
+  </div>
+    <h4>Registro de nuevo usuario</h4>
+    <form class="registro">
+      <div class="iz">
         <input type="email" id="email" placeholder="introduce tu email"/>
         <input type="email" id="repiteemail" placeholder="Repite tu email"/>
         <input type="password" id="password" placeholder="Introduce tu password"/>
-        <input type="password" id="repitepassword" placeholder="Repite tu password"/>         
+        <input type="password" id="repitepassword" placeholder="Repite tu password"/>
+      </div>    
+      <div class="dr">     
         <input type="text"  id="nombre" placeholder="Introduce tu nombre"/>          
         <input type="text" id="apellidos" placeholder="Introduce tu apellidos"/>          
         <input type="text" id="DNI" placeholder="Introduce tu DNI"/>       
         <input type="number" id="telefono" placeholder="Introduce tu telefono"/>
+      </div>
+        
+      </form> 
+      <form class="empresa">
         <input type="text" id="clientesid" placeholder="Introduce la empresa en la que trabajas"/> 
-        <button onclick="registro()">Registro</button> 
-    
+      </form>
+      <button onclick="registro()">Registro</button> 
+      </div> 
+    </div>    
 </main> 
 <footer>
   <div class="wrap">

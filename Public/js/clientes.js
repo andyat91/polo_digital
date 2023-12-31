@@ -17,8 +17,19 @@ fetch(`${host}/clientes`
     containerclientes.innerHTML=`<ul>`;
 
     for(i=0 ; i<json.length ; i++) {
-        containerclientes.innerHTML+=`<li>${json[i].razon_social}
-        <button onclick=ModificarClientes(${json[i].id})>MODIFICAR DATOS</button></li>`;
+        containerclientes.innerHTML+=`<div class="card">
+        <img src="${json[i].images} "/>
+        <div>
+        <div>
+          <h3>${json[i].razon_social}</h3>
+          <p>${json[i].descripcion} </p>
+          </div>
+          <div>
+          <h5>sector: ${json[i].sector} </h5>
+          <h5>TELEFONO: ${json[i].telefono} </h5>
+          </div>
+        </div>
+       </div>`;
     }
 
     containerclientes.innerHTML += `</ul>`;
