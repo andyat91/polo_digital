@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polo_Digital_CLIENTES</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polo_Digital_CLIENTES</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,103 +18,114 @@
   <link rel="stylesheet" href="/css/footer.css" />
   <link rel="stylesheet" href="/css/clientes.css" />
 </head>
+
 <body>
   <header>
     <div class="header">
 
-      <h1>P o l o _ D i g i t a l</h1>
+      <a href="/index.html">
+        <h1>P o l o _ D i g i t a l</h1>
+      </a>
       <h3>Habitantes</h3>
     </div>
   </header>
   <nav>
     <div class="wrap">
       <ul class="navmenu">
-        <li><a href="html/login.html">Login</a></li>
-        <li><a href="html/registro.html">Registro</a></li>
-        <li><a href="html/clientes.html">Clientes</a></li>
-        <li><a href="html/mobiliario.html">Mobiliario</a></li>
-        <li><a href="html/inventario.html">inventario</a></li>
-        <li><a href="html/eventos.html">Eventos</a></li>
+        <li><a href="/html/login.html">Login</a></li>
+        <li><a href="/html/registro.html">Registro</a></li>
+        <li><a href="/html/clientes.html">Clientes</a></li>
+        <li><a href="/html/mobiliario.html">Mobiliario</a></li>
+        <li><a href="/html/inventario.html">inventario</a></li>
+        <li><a href="/html/eventos.html">Eventos</a></li>
       </ul>
     </div>
   </nav>
   <main>
     <div class="wrap">
+      <div id="clientes">
+        <div class="card">
+          <img src="/images/jacinto.png" />
+          <div>
+            <h3>Nombre</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nostrum adipisci ea, numquam a nisi
+              minus distinctio quod expedita totam nam ab maxime </p>
+            <h5>sector</h5>
+            <h5>TELEFONO</h5>
+          </div>
+        </div>
+      </div>
+      <div class="formulariosclientes" id="formulariosclientes">
+        <div class="crearempresa">
+          <h3>Registra una nueva empresa</h3>
+          <div class="formbutton">
+          <form>
+            <input type="text" id="razon_social" placeholder="Razon social" />
+            <input type="text" id="CIF" placeholder="C.i.f." />
+            <input type="text" id="sector" placeholder="Sector" />
+            <input type="number" id="telefono" placeholder="Telefono de la empresa" />
+            <input type="number" id="numeroempleados" placeholder="numero de empleados" />
+          </form>
+          <button onclick="registrocliente()">Registrarse</button>
+        </div>
+        </div>
 
-
-<div id="clientes">
- <div class="card">
-  <img src="/images/jacinto.png"/>
-  <div>
-    <h3>Nombre</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nostrum adipisci ea, numquam a nisi minus distinctio quod expedita totam nam ab maxime </p>
-    <h5>sector</h5>
-    <h5>TELEFONO</h5>
-  </div>
- </div>
-</div>
-<h3>Registrate como nueva empresa</h3>
-
-  <form>
-    <input type="text" id="razon_social" placeholder="Razon social"/>
-    <input type="text" id="CIF" placeholder="C.i.f."/>
-    <input type="text" id="sector" placeholder="Sector"/>
-    <input type="number" id="telefono" placeholder="Telefono de la empresa"/>
-    <input type="number" id="numeroempleados" placeholder="numero de empleados"/>
-  </form>
-  <button onclick="registrocliente()">Registrarse</button>
-
- <h3>Modifica algun dato de tu empresa</h3>
-
- <form>
-  <input type="text" id="razon_socialModificar" placeholder="Razon social"/>
-  <input type="text" id="CIFModificar" placeholder="C.i.f."/>
-  <input type="text" id="sectorModificar" placeholder="Sector"/>
-  <input type="number" id="telefonoModificar" placeholder="Telefono de la empresa"/>
-  <input type="number" id="numeroempleadosModificar" placeholder="numero de empleados"/>
-  <input type="number" id="id" class="visually-hidden" placeholder="numero de empleados"/>
-</form>
-<button onclick="actualizarClientes()">Modificar datos</button>
-</div>
-</main>
-<footer>
-  <div class="wrap">
-    <h1>P o l o _ D i g i t a l</h1>
-    <h3>Polo de contenidos digitales de Málaga</h3>
-    <ul>
-      <a>
-        <li><i class="bi bi-instagram"></i> Instagram</li>
-      </a>
-      <a>
-        <li><i class="bi bi-facebook"></i> Facebook</li>
-      </a>
-      <a>
-        <li><i class="bi bi-twitch"></i> Twitch</li>
-      </a>
-      <a>
-        <li><i class="bi bi-youtube"></i> Youtube</li>
-      </a>
-    </ul>
-
-    <div class="politicafooter">
-      <p>Newsletter Polo_Digital</p>
-      <form>
-        <input type="text" id="emailnews" placeholder="Introduce tu email" />
-      </form>
-      <button onclick="suscripcion()">Suscripción</button>
-
-      <input type="checkbox" id="checkbox" class="checkbox" /><label class="labelcheck" for="checkbox">Aceptar</label>
-      <a href="/html/politicadeprivacidad.html" class="enlacepolitica">política de privacidad</a>
-
+        <div class="modificarempresa">
+          <h3>Modifica datos de tu empresa</h3>
+          <div class="formbutton">
+          <form>
+            <input type="text" id="razon_socialModificar" placeholder="Razon social" />
+            <input type="text" id="CIFModificar" placeholder="C.i.f." />
+            <input type="text" id="sectorModificar" placeholder="Sector" />
+            <input type="number" id="telefonoModificar" placeholder="Telefono de la empresa" />
+            <input type="number" id="numeroempleadosModificar" placeholder="numero de empleados" />
+            <input type="number" id="id" class="visually-hidden" placeholder="numero de empleados" />
+          </form>
+          <button onclick="actualizarClientes()">Modificar datos</button>
+        </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </main>
+  <footer>
+    <div class="wrap">
+      <h1>P o l o _ D i g i t a l</h1>
+      <h3>Polo de contenidos digitales de Málaga</h3>
+      <ul>
+        <a>
+          <li><i class="bi bi-instagram"></i> Instagram</li>
+        </a>
+        <a>
+          <li><i class="bi bi-facebook"></i> Facebook</li>
+        </a>
+        <a>
+          <li><i class="bi bi-twitch"></i> Twitch</li>
+        </a>
+        <a>
+          <li><i class="bi bi-youtube"></i> Youtube</li>
+        </a>
+      </ul>
 
-</footer>
+      <div class="politicafooter">
+        <p>Newsletter Polo_Digital</p>
+        <form>
+          <input type="text" id="emailnews" placeholder="Introduce tu email" />
+        </form>
+        <button onclick="suscripcion()">Suscripción</button>
+
+        <input type="checkbox" id="checkbox" class="checkbox" /><label class="labelcheck" for="checkbox">Aceptar</label>
+        <a href="/html/politicadeprivacidad.html" class="enlacepolitica">política de privacidad</a>
+
+      </div>
+    </div>
+
+  </footer>
 
 
-    <script src="/js/clientes.js" ></script>
-    <script src="/js/index.js"></script>
- 
-    
+  <script src="/js/clientes.js"></script>
+  <script src="/js/index.js"></script>
+
+
 </body>
+
 </html>

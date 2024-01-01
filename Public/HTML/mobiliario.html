@@ -15,35 +15,54 @@
   <link rel="stylesheet" href="/css/header-nav.css" />
   <link rel="stylesheet" href="/css/jumbotron.css" />
   <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/mobiliario.css" />
+  
 </head>
 <body>
 <header>
     <div class="header">
      
-      <h1>P o l o _ D i g i t a l</h1>
+      <a href="/index.html"><h1>P o l o _ D i g i t a l</h1></a>
+      <h3>Mobiliario</h3>
     </div>
 </header>
 <nav>
   <div class="wrap">
     <ul class="navmenu">
-      <li><a href="html/login.html">Login</a></li>
-      <li><a href="html/registro.html">Registro</a></li>
-      <li><a href="html/clientes.html">Clientes</a></li>
-      <li><a href="html/mobiliario.html">Mobiliario</a></li>
-      <li><a href="html/inventario.html">inventario</a></li>
-      <li><a href="html/eventos.html">Eventos</a></li>
+      <li><a href="/html/login.html">Login</a></li>
+      <li><a href="/html/registro.html">Registro</a></li>
+      <li><a href="/html/clientes.html">Clientes</a></li>
+      <li><a href="/html/mobiliario.html">Mobiliario</a></li>
+      <li><a href="/html/inventario.html">inventario</a></li>
+      <li><a href="/html/eventos.html">Eventos</a></li>
     </ul>
   </div>
 </nav>
 <main>
+  <div class="wrap">
+  <h4> Herramienta para la Gestión de mobiliario</h4>
+  <div class="mostrarmodificar">
   <div id="mobiliario">
-    <ul>
-        <li>Mesa_azul</li>
-        <li>Silla_roja</li>
-        <li>Armario_negro</li>
-        <li>Hamaca_jardin</li>
-    </ul>  
+  
   </div>
+  <div class="modificarmobiliario">
+    <i class="bi bi-wrench-adjustable-circle"></i>
+    <h4>elemento para modificar</h4>
+    
+    <div>
+      <form>
+          <input type="text" id="nombreModificar" placeholder="Nombre del mobiliario"/>
+          <input type="text" id="tipoModificar" placeholder="Tipo"/>
+          <input type="number" id="referenciaModificar" placeholder="Referencia del producto"/>
+          <input type="number" id="estadoModificar" placeholder="ESTADO? 1:OK 0:USADO">
+          <input type="number" id="salaidModificar" placeholder="Ubicacion?"/>
+          <input type="number" class="visually-hidden" id="id" />
+      </form>
+      <button onclick="guardarMobiliario()">Guardar modificación</button>
+    </div>
+  </div>
+</div>
+  <div class="crearmobiliario">
 <h4>Añade nuevo mobiliario</h4>
     <form>
         <input type="text" id="nombre"  placeholder="Nombre del mobiliario"/>
@@ -54,19 +73,10 @@
         
     </form>
     <button onclick="agregarMobiliario()">Agregar</button>
-   
+  </div>  
 
-<h4>Modifica un elemento del mobiliario</h4>
 
-    <form>
-        <input type="text" id="nombreModificar" placeholder="Nombre del mobiliario"/>
-        <input type="text" id="tipoModificar" placeholder="Tipo"/>
-        <input type="number" id="referenciaModificar" placeholder="Referencia del producto"/>
-        <input type="number" id="estadoModificar" placeholder="ESTADO? 1:OK 0:USADO">
-        <input type="number" id="salaidModificar" placeholder="Ubicacion?"/>
-        <input type="number" class="visually-hidden" id="id" />
-    </form>
-    <button onclick="guardarMobiliario()">Guardar modificación</button>
+</div>
 </main>
 <footer>
   <div class="wrap">

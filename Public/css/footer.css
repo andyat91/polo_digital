@@ -1,6 +1,6 @@
 footer {
     border-top: 48px solid;
-    border-color: var(--opuesto);
+    border-color: var(--opuestoTR);
     /* background-image: url("/images/estrellas.jpg");
     background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
     /* background-repeat: no-repeat; 
@@ -42,7 +42,7 @@ footer ul li:hover {
 .politicafooter {
     display: flex;
     flex-direction: row;
-    background-color: var(--opuesto);
+    background-color: var(--opuestoTR);
     align-items: center;
     color: var(--terciario);
     border-radius: 4px;

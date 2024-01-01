@@ -1,0 +1,74 @@
+h4 {
+    text-align: center;
+}
+.mostrarmodificar {
+    display: flex;
+    flex-direction: row;
+    margin-top: 32px;
+}
+.modificarmobiliario {
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 2px solid;
+    border-color: var(--especial);
+}
+.modificarmobiliario i {
+    font-size: 60px;
+    color: var(--especial);
+}
+.modificarmobiliario div {
+    width: 70%;
+}
+
+.modificarmobiliario input{
+    width: 100%;
+    padding: 8px;
+    margin: 8px;
+    background-color: var(--terciario);
+    color: var(--opuesto);
+    
+}
+.modificarmobiliario h4 {
+    margin: 0px;
+}
+.modificarmobiliario button {
+    width: 100%;
+    padding: 8px;
+    margin: 8px;
+    background-color: var(--terciario);
+    color: var(--opuesto);
+}
+
+#mobiliario  {
+    
+    list-style: none;
+    width: 100%;
+  
+    
+    
+    
+}
+#mobiliario button {
+    border: none;
+    background-color: var(--terciario);
+    color: var(--opuesto);
+}
+#mobiliario li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px;
+    border: 1px solid;
+    border-color: var(--especial);
+    background-color: var(--especialTR);
+}
+#mobiliario p {
+    margin: 0px;
+    padding: 8px;
+   
+}

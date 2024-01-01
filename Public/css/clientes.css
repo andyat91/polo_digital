@@ -16,7 +16,7 @@ h2{
 }
 .card img {
     width: 30%;
-   height: 260px;
+   height: 300px;
     background-size: cover; 
     overflow: hidden;
    
@@ -41,8 +41,81 @@ h2{
 #clientes .textobutton{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 #clientes button {
-
+    background-color: var(--terciario);
+    color: var(--opuesto);
+    border: none;
     padding: 8px;
+
+    border-left: 1px solid;
+}
+#clientes button:hover {
+    background-color: var(--especial);
+}
+#clientes a:hover{
+   color: var(--especial);
+}
+#clientes a {
+    padding: 8px;
+   font-size: 40px;
+    color: var(--terciario);
+      
+}
+
+.textobutton .enlace {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    border-top: 2px solid;
+    border-left: 2px solid;
+    border-top-left-radius: 8px;
+    border-color: var(--especial);
+    padding-top: 8px;
+    width: 20%;
+ 
+}
+.formulariosclientes {
+    display: flex;
+    margin-top: 36px;
+    margin-bottom: 42px;
+    color: var(--especial);
+   
+}
+.formulariosclientes .modificarempresa,.crearempresa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    text-align: center;
+}
+.formulariosclientes .modificarempresa{
+
+    border-left: 2px solid;
+    border-color: var(--especial);
+}
+.formulariosclientes input {
+
+    border: none;
+    padding: 8px;
+    margin: 8px;
+    width: 100%;
+    background-color: var(--terciario);
+}
+.formulariosclientes button {
+    border: none;
+    padding: 8px;
+    margin: 8px;
+    width: 100%;
+    background-color: var(--opuesto);
+    color: var(--terciario);
+}
+.formulariosclientes button:hover {
+    background-color: var(--especial);
+    color: var(--opuesto);
+}
+.formulariosclientes .formbutton {
+    width: 60%;
 }

@@ -18,22 +18,24 @@ fetch(`${host}/clientes`
 
     for(i=0 ; i<json.length ; i++) {
         containerclientes.innerHTML+=`<div class="card">
-        <img src="${json[i].images} "/>
-        <div>
-        <div>
-          <h3>${json[i].razon_social}</h3>
-          <p>${json[i].descripcion} </p>
-          </div>
-          <div class="textobutton">
-          <div>
-          <h5>sector: ${json[i].sector} </h5>
-          <h5>TELEFONO: ${json[i].telefono} </h5>
-          </div>
-          <h5><a href="www.releevant.com"><i class="bi bi-globe2"></i>releevant.com</a></h5>
-          <button onclick="ModificarClientes(${json[i].id})">Editar</button>
-          </div>
-        </div>
-       </div>`;
+                                        <img src="${json[i].images} "/>
+                                        <div>
+                                            <div>
+                                                <h3>${json[i].razon_social}</h3>
+                                                <p>${json[i].descripcion} </p>
+                                            </div>
+                                            <div class="textobutton">
+                                                <div>
+                                                    <h5>sector: ${json[i].sector} </h5>
+                                                    <h5>TELEFONO: ${json[i].telefono} </h5>
+                                                </div>
+                                                <div class="enlace">
+                                                    <h5><a href="${json[i].url}" title="${json[i].url}"><i class="bi bi-link"></i></a></h5>
+                                                    <button onclick="ModificarClientes(${json[i].id})">Editar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                      </div>`;
     }
 
     containerclientes.innerHTML += `</ul>`;
@@ -110,6 +112,7 @@ function ModificarClientes(idclientes) {
         document.getElementById("telefonoModificar").value = json[0].telefono;
         document.getElementById("numeroempleadosModificar").value = json[0].numero_empleados;
         document.getElementById("id").value = json[0].id;
+        desplazamiento ()
 //guardamos el id en un input oculto.
     }).catch(function(error) {
         console.log(error);
@@ -149,4 +152,13 @@ function actualizarClientes() {
     }).catch(function(error) {
         console.log(error)
     });
+}
+
+//-------------------------------------Funcion para desplazarse hasta modificar clientes--------------------------------------
+
+function desplazamiento () {
+    //seccion deseada por id
+    let seccion = document.getElementById("formulariosclientes");
+    //desplazamiento suave hasta la seccion deseada;
+    seccion.scrollIntoView({behavior:"smooth"});
 }

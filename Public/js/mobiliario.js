@@ -14,12 +14,12 @@ function mobiliario() {
         console.log(json)
 
         const containerMob = document.getElementById("mobiliario");
-        containerMob.innerHTML = `<ul>`;
+        
 
         for(i=0 ; i<json.length ; i++) {
-            containerMob.innerHTML += `<li>${json[i].nombre}<button onclick=modificarMobiliario(${json[i].id})>Modificar</button></li>`
+            containerMob.innerHTML += `<li><p>${json[i].nombre} </p><button onclick=modificarMobiliario(${json[i].id})>Modificar</button></li>`
         }
-        containerMob.innerHTML +=`</ul>`;
+        
         console.log(result);
         console.log(containerMob)
 
