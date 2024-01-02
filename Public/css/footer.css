@@ -56,6 +56,7 @@ footer ul li:hover {
      border:none;
     border-bottom-left-radius: 8px;
     border-top-left-radius: 8px;
+    font-family: 'Righteous', sans-serif;
 }
 
 .politicafooter button{
@@ -63,6 +64,7 @@ footer ul li:hover {
     background-color: var(--terciario);
     padding:8px ;
     border:none;
+    
    
 }
 .politicafooter button:hover{
@@ -82,6 +84,7 @@ footer .labelcheck {
   background-color: var(--terciario);
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
+  
 }
 footer .labelcheck:hover{
     background-color: var(--especial);

@@ -54,6 +54,7 @@
     border: none;
     margin-bottom: 8px;
     background-color: var(--terciario);
+    
 
 }
 .caja button:hover{
@@ -67,6 +68,7 @@
     margin-bottom: 8px;
     background-color: var(--terciario);
     width: 100%;
+    font-family: 'Righteous', sans-serif;
 }
 .registro {
     display: flex;
@@ -88,6 +90,7 @@
 }
 .registro input {
     width: 100%;
+    font-family: 'Righteous', sans-serif;
 }
 
 .registro .dr {

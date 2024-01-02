@@ -26,11 +26,14 @@ h4 {
 }
 
 .modificarmobiliario input{
+   
     width: 100%;
     padding: 6px;
     margin: 8px;
     background-color: var(--terciario);
-    color: var(--opuesto);
+    font-family: 'Righteous', sans-serif;
+    
+    
     
 }
 .modificarmobiliario h4 {
@@ -42,6 +45,7 @@ h4 {
     margin: 8px;
     background-color: var(--terciario);
     color: var(--opuesto);
+   
 }
 .modificarmobiliario button:hover {
     background-color: var(--especial);
@@ -77,10 +81,13 @@ h4 {
     border: 1px solid;
     border-color: var(--especial);
     background-color: var(--especialTR);
+    
 }
 #mobiliario p {
     margin: 0px;
     padding: 8px;
+    font-family: 'Righteous', sans-serif;
+    color: var(--terciario);
    
 }
 

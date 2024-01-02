@@ -4,20 +4,22 @@ h2{
 .card {
     display: flex;
     flex-direction: row;
-    
-    background-color:var(--opuestoTR) ;
+    border-left: 4px solid;
+    border-right: 4px solid;
+    border-color: var(--especial);
+    border-top: none;
+    border-bottom: none;
     color:var(--terciario);
     width:100%;
-    border:4px solid;
-    border-color: var(--especial);
-    border-radius: 16px;
+   
+    background: transparent;
     background-size: cover;
     overflow: hidden;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }
 .card img {
     width: 30%;
-   height: 300px;
+   height: 220px;
     background-size: cover; 
     overflow: hidden;
    
@@ -41,9 +43,9 @@ h2{
     
 }
 #clientes p {
-    font-family: 'DotGothic16', sans-serif;
+    font-family: 'Righteous', sans-serif;
     color: azure;
-    font-size: 20px;
+    font-size: 16px;
 }
 #clientes .textobutton{
     display: flex;
@@ -55,8 +57,9 @@ h2{
     color: var(--opuesto);
     border: none;
     padding: 6px;
-
+    font-family: 'Righteous', sans-serif;
     border-left: 1px solid;
+    width: 100%;
 }
 #clientes button:hover {
     background-color: var(--especial);
@@ -69,6 +72,9 @@ h2{
    font-size: 40px;
     color: var(--terciario);
       
+}
+.card .textobutton {
+    padding-left: 0px;
 }
 
 .textobutton .enlace {
@@ -110,6 +116,7 @@ h2{
     margin: 8px;
     width: 100%;
     background-color: var(--terciario);
+    font-family: 'Righteous', sans-serif;
 }
 .formulariosclientes button {
     border: none;
@@ -118,6 +125,7 @@ h2{
     width: 100%;
     background-color: var(--opuesto);
     color: var(--terciario);
+    font-family: 'Righteous', sans-serif;
 }
 .formulariosclientes button:hover {
     background-color: var(--especial);

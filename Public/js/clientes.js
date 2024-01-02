@@ -19,7 +19,7 @@ fetch(`${host}/clientes`
     for(i=0 ; i<json.length ; i++) {
         containerclientes.innerHTML+=`<div class="card">
                                         <img src="${json[i].images} "/>
-                                        <div>
+                                        <div >
                                             <div>
                                                 <h3>${json[i].razon_social}</h3>
                                                 <p>${json[i].descripcion} </p>
