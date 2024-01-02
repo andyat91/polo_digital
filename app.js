@@ -288,7 +288,7 @@ app.get("/mobiliario/:idmobiliario", function (request, response) {
   const idmobiliario = request.params.idmobiliario;
 
   connection.query(
-    `select * from mobiliario where id = "${idmobiliario}"`,
+    `SELECT salas.nombre as salasnombre,mobiliario.nombre AS mobiliarionombre,mobiliario.tipo,mobiliario.referencia,mobiliario.estado,mobiliario.id AS idmobiliario FROM mobiliario JOIN salas ON salas.id = mobiliario.salaid WHERE mobiliario.id =${idmobiliario}`,
     function (error, result, fields) {
       if (error) {
         response.status(400).send(`error ${error.message}`);

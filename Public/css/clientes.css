@@ -4,7 +4,8 @@ h2{
 .card {
     display: flex;
     flex-direction: row;
-    background: transparent;
+    
+    background-color:var(--opuestoTR) ;
     color:var(--terciario);
     width:100%;
     border:4px solid;
@@ -37,6 +38,12 @@ h2{
 }
 #clientes {
     margin-top: 48px;
+    
+}
+#clientes p {
+    font-family: 'DotGothic16', sans-serif;
+    color: azure;
+    font-size: 20px;
 }
 #clientes .textobutton{
     display: flex;
@@ -47,7 +54,7 @@ h2{
     background-color: var(--terciario);
     color: var(--opuesto);
     border: none;
-    padding: 8px;
+    padding: 6px;
 
     border-left: 1px solid;
 }
@@ -58,7 +65,7 @@ h2{
    color: var(--especial);
 }
 #clientes a {
-    padding: 8px;
+    padding: 6px;
    font-size: 40px;
     color: var(--terciario);
       
@@ -99,14 +106,14 @@ h2{
 .formulariosclientes input {
 
     border: none;
-    padding: 8px;
+    padding: 6px;
     margin: 8px;
     width: 100%;
     background-color: var(--terciario);
 }
 .formulariosclientes button {
     border: none;
-    padding: 8px;
+    padding: 6px;
     margin: 8px;
     width: 100%;
     background-color: var(--opuesto);

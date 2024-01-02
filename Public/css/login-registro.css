@@ -49,7 +49,7 @@
     border-radius: 50px 50px 0 0;
 }
 .caja button{
-    padding: 8px;
+    padding: 6px;
     width: 100%;
     border: none;
     margin-bottom: 8px;
@@ -61,7 +61,7 @@
     color: var(--opuesto);
 }
 .caja input {
-    padding: 8px;
+    padding: 6px;
     text-align: center;
     border: none;
     margin-bottom: 8px;

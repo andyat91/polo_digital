@@ -72,12 +72,12 @@ function modificarMobiliario(idmobiliario) {
     }).then(function(json) {
         console.log(json)
 
-        document.getElementById("nombreModificar").value = json[0].nombre;
+        document.getElementById("nombreModificar").value = json[0].mobiliarionombre;
         document.getElementById("tipoModificar").value = json[0].tipo;
         document.getElementById("referenciaModificar").value = json[0].referencia;
         document.getElementById("estadoModificar").value = json[0].estado;
-        document.getElementById("salaidModificar").value = json[0].salaid;
-        document.getElementById("id").value = json[0].id;
+        document.getElementById("salaidModificar").value = json[0].salasnombre;
+        document.getElementById("id").value = json[0].idmobiliario;
 
     }).catch(function(error) {
         console.log(error)
