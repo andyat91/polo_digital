@@ -35,7 +35,8 @@ fetch(`${host}/clientes`
                                                 </div>
                                             </div>
                                         </div>
-                                      </div>`;
+                                      </div>
+                                      <div class="separador"></div>`;
     }
 
     containerclientes.innerHTML += `</ul>`;

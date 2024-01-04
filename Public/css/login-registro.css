@@ -4,9 +4,11 @@
     border-color: var(--especial);
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin: 120px;
+    margin: 80px;
     padding: 80px;
+    width: 40%;
   
     
 }
@@ -14,16 +16,20 @@
 .loginregistro {
     
     display: flex;
+    justify-content: center;
     align-items: center;
     /* background-image: url("/images/constelacion1.jpg");
     background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
     /* background-repeat: no-repeat; 
     width: 100%;
     height: 680px; */ 
+    
 }
 .loginregistro form{
     display: flex;
     flex-direction: column;
+    width: 100%;
+    
     
 }
 .avatar {

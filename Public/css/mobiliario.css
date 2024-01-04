@@ -127,6 +127,7 @@ h4 {
     border:none;
     width: 100%;
     background-color: var(--terciario);
+    font-family: 'Righteous', sans-serif;
 }
 
 .crearmobiliario button {
@@ -135,10 +136,15 @@ h4 {
     border:none;
     width: 100%;
     background-color: var(--terciario);
+    color: var(--opuesto);
+}
+.crearmobiliario button:hover {
+    background-color: var(--especial);
+    color: var(--terciario);
 }
 
 .crearmobiliario .width {
-    width: 60%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
