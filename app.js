@@ -411,12 +411,11 @@ app.post("/inventario", function (request, response) {
 
   let nombre = request.body.nombre;
   let referencia = request.body.referencia;
-  let tipo = request.body.tipo;
+ 
   let estado = request.body.estado;
   let marca = request.body.marca;
   let clienteid= request.body.clienteid;
- 
-  //QUERY CLIENTEID MAL: dice error id no existe
+
 
 connection.query(
    `select id from clientes where razon_social="${clienteid}"`,
@@ -432,7 +431,7 @@ connection.query(
     
     
   connection.query(
-    `insert into inventario (nombre,referencia,tipo,estado,marca,clienteid) values ("${nombre}","${referencia}","${tipo}","${estado}","${marca}","${aux2}")`,
+    `insert into inventario (nombre,referencia,estado,marca,clienteid) values ("${nombre}","${referencia}","${estado}","${marca}","${aux2}")`,
     function (error, result, fields) {
       if (error) {
         response.status(400).send(`error ${error.message}`);
@@ -446,13 +445,12 @@ app.post("/inventario/:idinventario", function (request, response) {
   const idinventario = request.params.idinventario;
   const nombre = request.body.nombre;
   const referencia = request.body.referencia;
-  const tipo = request.body.tipo;
   const estado = request.body.estado;
   const marca = request.body.marca;
   const clienteid = request.body.clienteid;
 
   connection.query(
-    `update inventario set nombre="${nombre}", referencia="${referencia}", tipo="${tipo}", estado="${estado}", marca="${marca}",clienteid="${clienteid}" where id="${idinventario}"`,
+    `update inventario set nombre="${nombre}", referencia="${referencia}", estado="${estado}", marca="${marca}",clienteid="${clienteid}" where id="${idinventario}"`,
     function (error, result, fields) {
       if (error) {
         response.status(400).send(`error ${error.message}`);
@@ -466,7 +464,7 @@ app.get("/inventario/:idinventario", function (request, response) {
   const idinventario = request.params.idinventario;
 
   connection.query(
-    `select * from inventario where id="${idinventario}"`,
+    `SELECT inventario.id ,inventario.referencia,inventario.marca,inventario.nombre,inventario.estado,clientes.razon_social FROM inventario JOIN clientes ON clientes.id = inventario.clienteid where inventario.id="${idinventario}"`,
     function (error, result, fields) {
       if (error) {
         response.status(400).send(`error ${error.message}`);

@@ -12,13 +12,13 @@ function inventario() {
         console.log(json)
 
         const containerInv = document.getElementById("inventario");
-        containerInv.innerHTML =`<ul>`;
+        
 
         for(i=0 ; i<json.length ; i++) {
-            containerInv.innerHTML +=`<li>${json[i].nombre}<button onclick=modificarInventario(${json[i].id})>Modificar</button></li>`
+            containerInv.innerHTML +=`<li><p>${json[i].nombre} </p><button onclick=modificarInventario(${json[i].id})>Modificar</button></li>`
         }
-        containerInv.innerHTML += `</ul>`;
-        console.log(result);
+        
+      
         console.log(containerInv);
 
     }).catch(function(error) {
@@ -32,7 +32,6 @@ function agregarInventario() {
 
     const nombre = document.getElementById("nombre").value;
     const referencia = document.getElementById("referencia").value;
-    const tipo = document.getElementById("tipo").value;
     const estado = document.getElementById("estado").value;
     const marca = document.getElementById("marca").value;
     const clienteid = document.getElementById("clienteid").value;
@@ -42,7 +41,7 @@ function agregarInventario() {
         headers: {
         "Content-Type":"application/json"
     },
-    body: JSON.stringify({nombre:nombre , referencia:referencia, tipo:tipo , estado:estado , marca:marca, clienteid:clienteid})
+    body: JSON.stringify({nombre:nombre , referencia:referencia, estado:estado , marca:marca, clienteid:clienteid})
 
 
     }).then(function(response) {
@@ -70,12 +69,12 @@ function modificarInventario(idinventario) {
         console.log(json)
 
         document.getElementById("nombreModificar").value = json[0].nombre;
-        document.getElementById("tipoModificar").value = json[0].tipo;
         document.getElementById("referenciaModificar").value = json[0].referencia;
         document.getElementById("estadoModificar").value = json[0].estado;
         document.getElementById("marcaModificar").value = json[0].marca;
-        document.getElementById("clienteidModificar").value = json[0].clienteid;
+        document.getElementById("clienteidModificar").value = json[0].razon_social;
         document.getElementById("id").value = json[0].id;
+        console.log(json[0].id)
 
     }).catch(function(error) {
         console.log(error)
@@ -85,7 +84,6 @@ function modificarInventario(idinventario) {
 function actualizarInventario() {
 
     const nombre = document.getElementById("nombreModificar").value;
-    const tipo = document.getElementById("tipoModificar").value;
     const referencia = document.getElementById("referenciaModificar").value;
     const estado = document.getElementById("estadoModificar").value;
     const marca = document.getElementById("marcaModificar").value;
@@ -98,7 +96,7 @@ function actualizarInventario() {
         headers: {
         "Content-Type":"application/json"
     },
-    body: JSON.stringify({nombre:nombre , tipo:tipo , referencia:referencia , estado:estado, clienteid:clienteid , marca:marca , id:id})
+    body: JSON.stringify({nombre:nombre , referencia:referencia , estado:estado, clienteid:clienteid , marca:marca , id:id})
 
     }).then(function(response) {
         return response.json()

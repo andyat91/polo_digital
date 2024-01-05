@@ -14,12 +14,14 @@
   <link rel="stylesheet" href="/css/header-nav.css" />
   <link rel="stylesheet" href="/css/jumbotron.css" />
   <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/mobiliario.css" />
 </head>
 <body>
   <header>
     <div class="header">
      
       <a href="/index.html"><h1>P o l o _ D i g i t a l</h1></a>
+      <h3>inventario</h3>
     </div>
 </header>
 <nav>
@@ -35,40 +37,51 @@
   </div>
 </nav>
 <main>
-  <div id="inventario">
-    <ul>
-        <li>ordenador_dell</li>
-        <li>televisor_SONY</li>
-        <li>altavoz_HUAWEI</li>
-        <li>portatil_LENOVO</li>
-    </ul>
+  <div class="wrap">
+    <h4> Herramienta para la Gestión de inventario</h4>
+    <div class="mostrarmodificar">
+    <div id="inventario">
+    
+    </div>
+    <div class="modificarmobiliario">
+      <i class="bi bi-wrench-adjustable-circle"></i>
+      <h4>elemento para modificar</h4>
+      
+      <div>
+        <form>
+            <input type="text" id="nombreModificar" placeholder="Nombre del elemento"/>
+            <input type="text" id="marcaModificar" placeholder="Marca comercial"/>
+        
+            <input type="number" id="referenciaModificar" placeholder="Referencia del producto"/>
+            <input type="number" id="estadoModificar" placeholder="ESTADO? 1:OK 0:USADO">       
+            <input type="text" id="clienteidModificar" placeholder="Empresa arrendataria"/>
+            <input type="number" class="visually-hidden" id="id" />
+        </form>
+        <button onclick="actualizarInventario()">Guardar modificación</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="crearmobiliario">
+      <div class="contenido">
+      <h4>Agregar mobiliario</h4>
+      <div class="width">
+        <form>
+          <input type="text" id="nombre"  placeholder="Nombre del elemento"/>
+          <input type="text" id="marca" placeholder="Marca comercial">
+       
+          <input type="number" id="referencia" placeholder="Referencia del producto"/>
+          <div class="inputestado">
+          <input type="number" id="estado" placeholder="¿ESTADO? 1:OK 0:USADO">
+          
+          <input type="text" id="clienteid" placeholder="Empresa arrendataria"/>
+        </div>
+      </form>
+      <button onclick="agregarInventario()">Agregar</button>
+    </div>
+    </div> 
   </div> 
-    <h3>Introducir al inventario</h3>
-
-    <form>
-        <input type="text" id="nombre" placeholder="Nombre"/>
-        <input type="number" id="referencia" placeholder="Referencia"/>
-        <input type="text" id="tipo" placeholder="tipo"/>
-        <input type="number" id="estado" placeholder="ESTADO? 1:OK 0:USADO">
-        <input type="text" id="marca" placeholder="Marca"/>
-        <input type="text" id="clienteid" placeholder="Empresa arrendataria"/>
-    </form>
-    <button onclick="agregarInventario()" >Agregar Inventario</button>
-
-
-    <h3>Modificar algun elemento del inventario</h3>
-
-    <form>
-      <input type="text" id="nombreModificar" placeholder="Nombre"/>
-      <input type="number" id="referenciaModificar" placeholder="Referencia"/>
-      <input type="text" id="tipoModificar" placeholder="tipo"/>
-      <input type="number" id="estadoModificar" placeholder="ESTADO? 1:OK 0:USADO">
-      <input type="text" id="marcaModificar" placeholder="Marca"/>
-      <input type="text" id="clienteidModificar" placeholder="Empresa arrendataria"/>
-      <input type="number" id="id" class="visually-hidden"/>
-  </form>
-    <button onclick="actualizarInventario()">Actualizar Inventario</button>
-
+  </div>
 </main>
 <footer>
   <div class="wrap">

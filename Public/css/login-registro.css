@@ -65,7 +65,7 @@
 }
 .caja button:hover{
     background-color: var(--especial);
-    color: var(--opuesto);
+    color: var(--terciario);
 }
 .caja input {
     padding: 6px;
@@ -76,14 +76,26 @@
     width: 100%;
     font-family: 'Righteous', sans-serif;
 }
+
+.registrocaja {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registrocaja .caja {
+
+    width: 50%;
+}
+.registrocaja button {
+    color: var(--opuesto);
+}
 .registro {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.registro .button {
-    width: 100%;
-}
+
 
 
 
