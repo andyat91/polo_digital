@@ -450,14 +450,23 @@ app.post("/inventario/:idinventario", function (request, response) {
   const clienteid = request.body.clienteid;
 
   connection.query(
-    `update inventario set nombre="${nombre}", referencia="${referencia}", estado="${estado}", marca="${marca}",clienteid="${clienteid}" where id="${idinventario}"`,
+    `select id from clientes where razon_social = "${clienteid}"`,
+    function(error,result,fields) {
+      if (error) {
+        response.status(400).send(`error ${error.message}`);
+      }
+    let aux3 = result[0].id;
+    
+  
+  connection.query(
+    `update inventario set nombre="${nombre}", referencia="${referencia}", estado="${estado}", marca="${marca}",clienteid="${aux3}" where id="${idinventario}"`,
     function (error, result, fields) {
       if (error) {
         response.status(400).send(`error ${error.message}`);
       }
       response.send(result);
-    }
-  );
+    });
+  });
 });
 //4ºseleccionar algun elemento con get y params
 app.get("/inventario/:idinventario", function (request, response) {

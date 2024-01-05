@@ -88,15 +88,15 @@ function actualizarInventario() {
     const estado = document.getElementById("estadoModificar").value;
     const marca = document.getElementById("marcaModificar").value;
     const clienteid = document.getElementById("clienteidModificar").value;
-    const id = document.getElementById("id").value;
+    const idinventario = document.getElementById("id").value;
 
 
-    fetch(`${host}/inventario/${id}`, {
+    fetch(`${host}/inventario/${idinventario}`, {
         method:"POST",
         headers: {
         "Content-Type":"application/json"
     },
-    body: JSON.stringify({nombre:nombre , referencia:referencia , estado:estado, clienteid:clienteid , marca:marca , id:id})
+    body: JSON.stringify({nombre:nombre , referencia:referencia , estado:estado, clienteid:clienteid , marca:marca , idinventario:idinventario})
 
     }).then(function(response) {
         return response.json()

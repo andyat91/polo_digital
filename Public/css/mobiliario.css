@@ -14,7 +14,10 @@ h4 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    border: 2px solid;
+    
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
     border-color: var(--especial);
 }
 .modificarmobiliario i {
@@ -38,7 +41,7 @@ h4 {
     
 }
 .modificarmobiliario h4 {
-    margin: 0px;
+    margin-top: 0px;
 }
 .modificarmobiliario button {
     width: 100%;
@@ -93,7 +96,7 @@ h4 {
    
 }
 
-.crearmobiliario {
+ .mobiliario .crearmobiliario {
     height: 600px;
     background-image: url("/images/mobiliario2.jpg");
     background-size: cover;
@@ -106,10 +109,25 @@ h4 {
     border-right: 2px solid;
     border-bottom: 2px solid;
     border-color: var(--especial);
-    
     position: relative;
 }
-.crearmobiliario::after {
+
+.inventario .crearmobiliario {
+    height: 600px;
+    background-image: url("/images/inventario4.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    border-color: var(--especial);
+    position: relative;
+}
+ .crearmobiliario::after {
     
     content: '';
     position: absolute;
