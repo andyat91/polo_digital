@@ -14,8 +14,10 @@
   <link rel="stylesheet" href="/css/header-nav.css" />
   <link rel="stylesheet" href="/css/jumbotron.css" />
   <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/mobiliario.css" />
+
 </head>
-<body>
+<body class="eventos">
 <header>
         <div class="header">
          
@@ -35,40 +37,55 @@
   </div>
 </nav>
 <main>
-<div id="eventos">
-    <ul>
-        <li>Evento PolloWeen 31/10/23</li>
-        <li>Navidad 21/12/23</li>
-        <li>Hiring-day</li>
-    </ul>
-</div>
-<h3>Crea un nuevo evento</h3>
-
-    <form>
-        <input type="text" id="nombre" placeholder="Nombre"/>
-        <input type="text" id="tipo" placeholder="Tipo"/>
-        <input type="text" id="fechainicio" placeholder="Fecha de inicio"/>
-        <input type="text" id="fechafin" placeholder="Fecha de fin"/>
-        <input type="number" id="aforo" placeholder="Aforo"/>
-        <input type="text" id="clientesid" placeholder="Empresa"/>
-        <input type="text" id="salaid" placeholder="Sala?"/>
-    </form>
-    <button onclick="crearEventos()">Crear evento</button>
-
-
-<h3>Modifica algun dato de tu evento</h3>
-
-    <form>
-        <input type="text" id="nombreModificar" placeholder="Nombre"/>
-        <input type="text" id="tipoModificar" placeholder="Tipo"/>
-        <input type="tect" id="fechainicioModificar" placeholder="Fecha de inicio"/>
-        <input type="text" id="fechafinModificar" placeholder="Fecha de fin"/>
-        <input type="number" id="aforoModificar" placeholder="Aforo"/>
-        <input type="text" id="clientesidModificar" placeholder="Empresa"/>
-        <input type="text" id="salaidModificar" placeholder="Sala?"/>
-        <input type="text" id="id" class="visually-hidden"/>
-    </form>
-    <button onclick="actualizarEvento()">Modificar evento</button>
+  <div class="wrap">
+    <h4> Herramienta para la Gestión de eventos</h4>
+    <div class="mostrarmodificar">
+    <div id="eventos">
+    
+    </div>
+    <div class="modificarmobiliario">
+      <i class="bi bi-wrench-adjustable-circle"></i>
+      <h4>elemento para modificar</h4>
+      
+      <div>
+        <form>
+          <input type="text" id="nombreModificar" placeholder="Nombre"/>
+          <input type="text" id="tipoModificar" placeholder="Tipo"/>
+          <input type="tect" id="fechainicioModificar" placeholder="Fecha de inicio"/>
+          <input type="text" id="fechafinModificar" placeholder="Fecha de fin"/>
+          <input type="number" id="aforoModificar" placeholder="Aforo"/>
+          <input type="text" id="clientesidModificar" placeholder="Empresa responsable del evento"/>
+          <input type="text" id="salaidModificar" placeholder="Sala?"/>
+          <input type="text" id="id" class="visually-hidden"/>
+        </form>
+        <button onclick="actualizarEvento()">Modificar evento</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="crearmobiliario">
+      <div class="contenido">
+      <h4>Agregar mobiliario</h4>
+      <div class="width">
+        <form>
+          <input type="text" id="nombre" placeholder="Nombre"/>
+          <input type="text" id="tipo" placeholder="Tipo"/>
+          <input type="text" id="fechainicio" placeholder="Fecha de inicio"/>
+          <div class="inputestado">
+            <input type="text" id="fechafin" placeholder="Fecha de fin"/>
+            <input type="number" id="aforo" placeholder="Aforo"/>
+            <input type="text" id="clientesid" placeholder="Empresa"/>
+            <input type="text" id="salaid" placeholder="Sala?"/>
+          </div>
+      </form>
+      <button onclick="crearEventos()">Crear evento</button>
+    </div>
+    </div> 
+  </div> 
+    
+     
+  
+  </div>
 </main>
 <footer>
   <div class="wrap">

@@ -57,7 +57,7 @@ h4 {
     color: var(--terciario);
 }
 
-#mobiliario  {
+#mobiliario,#inventario,#eventos  {
     
     list-style: none;
     width: 100%;
@@ -68,17 +68,17 @@ h4 {
     
     
 }
-#mobiliario button {
+#mobiliario,#inventario,#eventos button {
     border: none;
     background-color: var(--terciario);
     color: var(--opuesto);
     padding: 6px;
 }
-#mobiliario button:hover {
+#mobiliario,#inventario,#eventos button:hover {
     background-color: var(--especial);
     color: var(--terciario);
 }
-#mobiliario li {
+#mobiliario,#inventario,#eventos li {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -88,7 +88,7 @@ h4 {
     background-color: var(--especialTR);
     
 }
-#mobiliario p {
+#mobiliario,#inventario,#eventos p {
     margin: 0px;
     padding: 8px;
     font-family: 'Righteous', sans-serif;
@@ -113,6 +113,21 @@ h4 {
 }
 
 .inventario .crearmobiliario {
+    height: 600px;
+    background-image: url("/images/inventario4.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    border-color: var(--especial);
+    position: relative;
+}
+.eventos .crearmobiliario {
     height: 600px;
     background-image: url("/images/inventario4.jpg");
     background-size: cover;
@@ -190,41 +205,4 @@ h4 {
     flex-direction: column;
     align-items: center;
 }
-#inventario  {
-    
-    list-style: none;
-    width: 100%;
-    border: 2px solid;
-    border-color: var(--especial);
-  
-    
-    
-    
-}
-#inventario button {
-    border: none;
-    background-color: var(--terciario);
-    color: var(--opuesto);
-    padding: 6px;
-}
-#inventario button:hover {
-    background-color: var(--especial);
-    color: var(--terciario);
-}
-#inventario li {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 8px;
-    border: 1px solid;
-    border-color: var(--especial);
-    background-color: var(--especialTR);
-    
-}
-#inventario p {
-    margin: 0px;
-    padding: 8px;
-    font-family: 'Righteous', sans-serif;
-    color: var(--terciario);
-   
-}
+

@@ -316,7 +316,6 @@ app.get("/eventos", function (request, response) {
 app.post("/eventos", function (request, response) {
 
   let nombre = request.body.nombre;
-  let tipo = request.body.tipo;
   let fechainicio = request.body.fecha_inicio;
   let fechafin = request.body.fecha_fin;
   let aforo = request.body.aforo;
@@ -343,7 +342,7 @@ app.post("/eventos", function (request, response) {
 
 
   connection.query(
-    `insert into eventos (nombre,tipo,fecha_inicio,fecha_fin,aforo,clientesid,salaid) VALUES ("${nombre}","${tipo}","${fechainicio}","${fechafin}","${aforo}",${aux},${aux2})`,
+    `insert into eventos (nombre,fecha_inicio,fecha_fin,aforo,clientesid,salaid) VALUES ("${nombre}","${fechainicio}","${fechafin}","${aforo}",${aux},${aux2})`,
     function (error, result, fields) {
       if (error) {
         response.status(400).send(`error ${error.message}`);
@@ -359,7 +358,6 @@ app.post("/eventos/:ideventos", function (request, response) {
 
   const ideventos = request.params.ideventos;
   const nombre = request.body.nombre;
-  const tipo = request.body.tipo;
   const fechainicio = request.body.fecha_inicio;
   const fechafin = request.body.fecha_fin;
   const aforo = request.body.aforo;
@@ -367,7 +365,7 @@ app.post("/eventos/:ideventos", function (request, response) {
   const salaid = request.body.salaid;
 
   connection.query(
-    `update eventos set nombre="${nombre}", tipo="${tipo}", fecha_inicio="${fechainicio}", fecha_fin="${fechafin}", aforo="${aforo}", clientesid="${clientesid}", salaid="${salaid}" where id ="${ideventos}"`,
+    `update eventos set nombre="${nombre}", fecha_inicio="${fechainicio}", fecha_fin="${fechafin}", aforo="${aforo}", clientesid="${clientesid}", salaid="${salaid}" where id ="${ideventos}"`,
     function (error, result, fields) {
       if (error) {
         response.status(400).send(`error ${error.message}`);
