@@ -57,28 +57,25 @@ h4 {
     color: var(--terciario);
 }
 
-#mobiliario,#inventario,#eventos  {
+#mobiliario  {
     
     list-style: none;
     width: 100%;
     border: 2px solid;
     border-color: var(--especial);
   
-    
-    
-    
 }
-#mobiliario,#inventario,#eventos button {
+#mobiliario button {
     border: none;
     background-color: var(--terciario);
     color: var(--opuesto);
     padding: 6px;
 }
-#mobiliario,#inventario,#eventos button:hover {
+#mobiliario button:hover {
     background-color: var(--especial);
     color: var(--terciario);
 }
-#mobiliario,#inventario,#eventos li {
+#mobiliario li {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -88,7 +85,7 @@ h4 {
     background-color: var(--especialTR);
     
 }
-#mobiliario,#inventario,#eventos p {
+#mobiliario p {
     margin: 0px;
     padding: 8px;
     font-family: 'Righteous', sans-serif;
@@ -191,7 +188,7 @@ h4 {
     flex-direction: row;
     justify-content: space-between;
 }
-.crearmobiliario #salaid{
+.mobiliario .crearmobiliario #salaid{
    margin-left: 8px; 
 }
 .crearmobiliario #clienteid{
@@ -205,4 +202,80 @@ h4 {
     flex-direction: column;
     align-items: center;
 }
+
+#inventario {
+    
+    list-style: none;
+    width: 100%;
+    border: 2px solid;
+    border-color: var(--especial);
+  
+}
+#inventario button {
+    border: none;
+    background-color: var(--terciario);
+    color: var(--opuesto);
+    padding: 6px;
+}
+#inventario button:hover {
+    background-color: var(--especial);
+    color: var(--terciario);
+}
+#inventario li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px;
+    border: 1px solid;
+    border-color: var(--especial);
+    background-color: var(--especialTR);
+    
+}
+#inventario p {
+    margin: 0px;
+    padding: 8px;
+    font-family: 'Righteous', sans-serif;
+    color: var(--terciario);
+   
+}
+#eventos  {
+    
+    list-style: none;
+    width: 100%;
+    border: 2px solid;
+    border-color: var(--especial);
+  
+}
+#eventos button {
+    border: none;
+    background-color: var(--terciario);
+    color: var(--opuesto);
+    padding: 6px;
+}
+#eventos button:hover {
+    background-color: var(--especial);
+    color: var(--terciario);
+}
+#eventos li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px;
+    border: 1px solid;
+    border-color: var(--especial);
+    background-color: var(--especialTR);
+    
+}
+#eventos p {
+    margin: 0px;
+    padding: 8px;
+    font-family: 'Righteous', sans-serif;
+    color: var(--terciario);
+   
+}
+.eventos #fechafin {
+    border-left: 1px solid;
+    border-color: var(--opuesto);
+}
+
 

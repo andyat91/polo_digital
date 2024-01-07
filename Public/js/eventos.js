@@ -103,7 +103,7 @@ function actualizarEvento() {
         headers: {
         "Content-Type":"application/json"
     },
-    body: JSON.stringify({nombre:nombre , fechainicio:fechainicio , fechafin:fechafin , aforo:aforo , clientesid:clientesid , salaid:salaid})
+    body: JSON.stringify({nombre:nombre , fecha_inicio:fechainicio , fecha_fin:fechafin , aforo:aforo , clientesid:clientesid , salaid:salaid})
 
 
     }).then(function(response) {

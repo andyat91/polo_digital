@@ -22,6 +22,7 @@
         <div class="header">
          
           <a href="/index.html"><h1>P o l o _ D i g i t a l</h1></a>
+          <h3>Eventos</h3>
         </div>
 </header>
 <nav>
@@ -49,13 +50,12 @@
       
       <div>
         <form>
-          <input type="text" id="nombreModificar" placeholder="Nombre"/>
-          <input type="text" id="tipoModificar" placeholder="Tipo"/>
+          <input type="text" id="nombreModificar" placeholder="Nombre del evento"/>
+          <input type="text" id="clientesidModificar" placeholder="Empresa responsable del evento"/>
+          <input type="number" id="aforoModificar" placeholder="Aforo"/>
+          <input type="text" id="salaidModificar" placeholder="¿En que sala se va a realizar?"/>
           <input type="tect" id="fechainicioModificar" placeholder="Fecha de inicio"/>
           <input type="text" id="fechafinModificar" placeholder="Fecha de fin"/>
-          <input type="number" id="aforoModificar" placeholder="Aforo"/>
-          <input type="text" id="clientesidModificar" placeholder="Empresa responsable del evento"/>
-          <input type="text" id="salaidModificar" placeholder="Sala?"/>
           <input type="text" id="id" class="visually-hidden"/>
         </form>
         <button onclick="actualizarEvento()">Modificar evento</button>
@@ -65,17 +65,16 @@
   
   <div class="crearmobiliario">
       <div class="contenido">
-      <h4>Agregar mobiliario</h4>
+      <h4>Crear nuevo evento</h4>
       <div class="width">
         <form>
-          <input type="text" id="nombre" placeholder="Nombre"/>
-          <input type="text" id="tipo" placeholder="Tipo"/>
-          <input type="text" id="fechainicio" placeholder="Fecha de inicio"/>
+          <input type="text" id="nombre" placeholder="Nombre del evento"/>
+          <input type="text" id="clientesid" placeholder="Empresa responsable del evento"/>
+          <input type="number" id="aforo" placeholder="Aforo"/>
+          <input type="text" id="salaid" placeholder="¿En que sala se va a realizar?"/>
           <div class="inputestado">
-            <input type="text" id="fechafin" placeholder="Fecha de fin"/>
-            <input type="number" id="aforo" placeholder="Aforo"/>
-            <input type="text" id="clientesid" placeholder="Empresa"/>
-            <input type="text" id="salaid" placeholder="Sala?"/>
+            <input type="text" id="fechainicio" placeholder="Fecha de inicio"/>
+            <input type="text" id="fechafin" placeholder="Fecha de fin"/> 
           </div>
       </form>
       <button onclick="crearEventos()">Crear evento</button>
